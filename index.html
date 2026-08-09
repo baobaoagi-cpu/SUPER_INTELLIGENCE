@@ -157,13 +157,16 @@ html[lang="en"] .svc-en.dup{display:none}
 .mini.hu li:before{color:var(--c4)}
 
 /* ---------- case1 dept grid ---------- */
-.case-intro{max-width:920px;text-wrap:pretty}
+.case-intro{max-width:1040px;text-wrap:pretty}
 .case1{position:relative;display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:48px}
 .dept{background:var(--panel);border:1px solid var(--line);border-radius:var(--r);padding:26px;transition:border-color .3s;display:flex;flex-direction:column;--dept-accent:var(--c1)}
 .dept:hover{border-color:var(--line2)}
 .dept h4{color:var(--cream);font-size:17px;margin-bottom:10px;display:flex;align-items:center;gap:10px;font-weight:700}
 .dept h4 i{width:9px;height:9px;border-radius:50%;flex-shrink:0}
-.dept p{color:var(--muted);font-size:13.5px;line-height:1.85;flex:1}
+.dept p{color:var(--muted);font-size:13.5px;line-height:1.85}
+.dept-cap-label{margin-top:18px;color:var(--dept-accent);font-size:10.5px;letter-spacing:.16em;font-weight:700;text-transform:uppercase}
+.dept-capabilities{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:10px;flex:1}
+.dept-capabilities li{min-width:0;padding:9px 10px;border-radius:10px;background:rgba(255,255,255,.035);border:1px solid var(--line);color:#C7CCDA;font-size:12.5px;line-height:1.45}
 .dept-result{display:flex;align-items:flex-end;gap:13px;margin-top:20px;padding-top:17px;border-top:1px solid var(--line2)}
 .dept-result strong{color:var(--dept-accent);font-size:clamp(30px,3vw,42px);line-height:1;font-weight:700;letter-spacing:-.035em;font-variant-numeric:tabular-nums}
 .dept-result span{color:#C7CCDA;font-size:12.5px;line-height:1.45}
@@ -203,19 +206,30 @@ html[lang="en"] .svc-en.dup{display:none}
 
 /* ---------- case2 ---------- */
 .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:48px;counter-reset:st}
-.step{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:18px 20px;font-size:14.5px;color:#C7CCDA;display:flex;gap:14px;align-items:center;transition:border-color .3s}
+.step{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:18px 20px;color:#C7CCDA;display:flex;gap:14px;align-items:flex-start;transition:border-color .3s}
 .step:hover{border-color:rgba(79,191,174,.4)}
 .step i{counter-increment:st;flex-shrink:0;width:30px;height:30px;border-radius:10px;background:rgba(79,191,174,.12);border:1px solid rgba(79,191,174,.3);color:var(--c2);display:flex;align-items:center;justify-content:center;font-style:normal;font-size:12.5px;font-weight:700}
 .step i:before{content:counter(st,decimal-leading-zero)}
-.qa{margin-top:34px;background:var(--panel);border:1px solid var(--line);border-radius:var(--r);padding:30px}
+.step-copy{min-width:0}
+.step-copy strong{display:block;color:var(--cream);font-size:14.5px;line-height:1.5;font-weight:700}
+.step-copy small{display:block;color:var(--muted);font-size:12.5px;line-height:1.65;margin-top:6px}
+.step:last-child{grid-column:1/-1;border-color:rgba(79,191,174,.34);background:linear-gradient(90deg,rgba(79,191,174,.08),var(--panel) 48%)}
+.case2-intelligence{display:grid;grid-template-columns:1.08fr .92fr;gap:16px;margin-top:34px}
+.assist-panel,.qa{background:var(--panel);border:1px solid var(--line);border-radius:var(--r);padding:30px}
+.assist-panel h4,.qa h4{font-size:13px;letter-spacing:.15em;color:var(--c2);margin-bottom:20px;font-weight:600}
+.assist-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.assist-item{min-width:0;padding:11px 13px;border-radius:10px;background:rgba(79,191,174,.06);border:1px solid rgba(79,191,174,.16);color:#C7CCDA;font-size:13px;line-height:1.45}
+.qa{margin-top:0}
 .qa h4{font-size:13px;letter-spacing:.18em;color:var(--c2);margin-bottom:20px;font-weight:600}
-.qa-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.qa-grid{display:grid;grid-template-columns:1fr;gap:12px}
 .q{background:rgba(255,255,255,.035);border:1px solid var(--line2);border-radius:4px 16px 16px 16px;padding:13px 18px;font-size:14.5px;color:var(--text)}
 .case-values{display:grid;grid-template-columns:repeat(3,1fr);margin-top:20px;background:var(--panel2);border:1px solid var(--line);border-radius:var(--r);overflow:hidden}
 .case-value{padding:24px 26px}
 .case-value + .case-value{border-left:1px solid var(--line2)}
 .case-value strong{display:block;color:var(--cream);font-size:15px;font-weight:700;margin-bottom:7px}
-.case-value p{color:var(--muted);font-size:13px;line-height:1.7}
+.case-value ul{list-style:none;display:flex;flex-direction:column;gap:7px;margin-top:11px}
+.case-value li{position:relative;padding-left:15px;color:var(--muted);font-size:13px;line-height:1.65}
+.case-value li:before{content:"";position:absolute;left:0;top:9px;width:5px;height:5px;border-radius:50%;background:var(--c2);opacity:.8}
 
 /* ---------- b3 spirit ---------- */
 .sp-hero{display:grid;grid-template-columns:1.05fr .95fr;gap:40px;align-items:center;margin-top:20px}
@@ -289,7 +303,7 @@ footer{border-top:1px solid var(--line);padding:44px 0;color:var(--muted);font-s
   .case1{grid-template-columns:1fr;padding-top:0}
   .case1-core{position:static;transform:none;width:100%;height:auto;border-radius:16px;padding:16px;box-shadow:none;flex-direction:row;justify-content:center;gap:10px;order:-1}
   .case1-core .ring{display:none}
-  .qa-grid,.case-values{grid-template-columns:1fr}
+  .case2-intelligence,.case-values{grid-template-columns:1fr}
   .case-value + .case-value{border-left:0;border-top:1px solid var(--line2)}
   .case-note{text-align:left}
 }
@@ -306,6 +320,7 @@ footer{border-top:1px solid var(--line);padding:44px 0;color:var(--muted);font-s
   .stage strong{grid-column:2}
   .stage span{grid-column:2}
   .steps{grid-template-columns:1fr}
+  .dept-capabilities,.assist-grid{grid-template-columns:1fr}
   .vs{grid-template-columns:1fr}
   .vs-mid{padding:6px 0}
   .layer{grid-template-columns:1fr;gap:6px}
@@ -520,29 +535,55 @@ footer{border-top:1px solid var(--line);padding:44px 0;color:var(--muted);font-s
   <div class="wrap">
     <div class="reveal">
       <div class="sec-label">04 — Case Study</div>
-      <h2 data-i18n="c1_t">案例：工程製造業</h2>
-      <p class="sec-sub case-intro" data-i18n="c1_sub">協助工程製造企業盤點設計、採購、業務與電控的實際工作流程，將工程圖面、採購報價、業務紀錄與技術文件接入同一套企業 AI 核心。AI 協助辨識、整理、比對與查詢資料，縮短人工翻找、抄寫與等待的時間，並讓分散在文件、系統與個人經驗中的知識持續累積。</p>
+      <h2 data-i18n="c1_t">工程製造業：四大核心部門 AI 智能流程導入</h2>
+      <p class="sec-sub case-intro" data-i18n="c1_sub">協助工程製造企業將 AI 導入設計、採購、業務與電控等核心作業。AI 能理解工程圖面、BOM、供應商報價、業務紀錄與多語技術文件，進行資訊辨識、語意搜尋、歷史比對、內容生成與工作提醒，讓分散在不同部門的資料轉化為可以直接協助作業的企業智能。</p>
     </div>
     <div class="case1 reveal">
       <div class="case1-core"><div class="ring"></div><b>Enterprise<br>AI Core</b><span>CORE</span></div>
       <div class="dept" style="--dept-accent:var(--c1)">
         <h4><i style="background:var(--c1)"></i><span data-i18n="c1_d1">設計部門</span></h4>
-        <p data-i18n="c1_d1x">AI 協助理解與整理工程圖面、BOM、版本及設計變更資料，讓圖面處理與歷史資料搜尋不再依賴大量人工操作。</p>
+        <p data-i18n="c1_d1x">AI 讀懂工程圖面與物料資料，自動建立圖面、BOM、版本及設計變更之間的關聯，讓工程人員能快速完成批次處理並搜尋歷史設計知識。</p>
+        <div class="dept-cap-label" data-i18n="c1_cap">AI 智能協作內容</div>
+        <ul class="dept-capabilities">
+          <li data-i18n="c1_d1a">AI 工程圖面批量處理</li><li data-i18n="c1_d1b">AI 圖面資訊辨識</li>
+          <li data-i18n="c1_d1c">智能圖面命名與整理</li><li data-i18n="c1_d1d">BOM 物料智能整理</li>
+          <li data-i18n="c1_d1e">設計變更協助</li><li data-i18n="c1_d1f">版本與歷史圖面知識庫</li>
+          <li data-i18n="c1_d1g">舊圖 AI 語意搜尋</li>
+        </ul>
         <div class="dept-result"><strong>−97%</strong><span data-i18n="c1_m1x">圖面批次作業時間降低</span></div>
-      </div>
-      <div class="dept" style="--dept-accent:var(--c2)">
-        <h4><i style="background:var(--c2)"></i><span data-i18n="c1_d2">業務部門</span></h4>
-        <p data-i18n="c1_d2x">串接客戶資料、拜訪紀錄、商機與案件進度，讓語音紀錄完成後即可同步整理，減少人工重複輸入。</p>
-        <div class="dept-result"><strong>0</strong><span data-i18n-html="c1_m2x">人工重複輸入<small>語音紀錄即時完成</small></span></div>
       </div>
       <div class="dept" style="--dept-accent:var(--c4)">
         <h4><i style="background:var(--c4)"></i><span data-i18n="c1_d3">採購部門</span></h4>
-        <p data-i18n="c1_d3x">整合供應商報價、歷史價格與採購條件，協助團隊快速查詢、比較並進行成本分析。</p>
+        <p data-i18n="c1_d3x">AI 跨供應商報價、歷史採購價格與交易條件進行智能整理、查詢與比對，協助採購人員快速掌握價格脈絡、條件差異與成本影響。</p>
+        <div class="dept-cap-label" data-i18n="c1_cap">AI 智能協作內容</div>
+        <ul class="dept-capabilities">
+          <li data-i18n="c1_d3a">採購資料智能整理</li><li data-i18n="c1_d3b">供應商報價 AI 比對</li>
+          <li data-i18n="c1_d3c">歷史採購價格智能查詢</li><li data-i18n="c1_d3d">前購價 AI 搜尋</li>
+          <li data-i18n="c1_d3e">供應商條件比較</li><li data-i18n="c1_d3f">AI 成本與採購分析</li>
+        </ul>
         <div class="dept-result"><strong>−99%</strong><span data-i18n="c1_m3x">歷史價格查詢時間降低</span></div>
+      </div>
+      <div class="dept" style="--dept-accent:var(--c2)">
+        <h4><i style="background:var(--c2)"></i><span data-i18n="c1_d2">業務部門</span></h4>
+        <p data-i18n="c1_d2x">AI 理解客戶、商機、拜訪內容與案件進度，將語音紀錄轉成結構化資訊，自動整理工作重點、追蹤進度並協助主管掌握業績與待辦。</p>
+        <div class="dept-cap-label" data-i18n="c1_cap">AI 智能協作內容</div>
+        <ul class="dept-capabilities">
+          <li data-i18n="c1_d2a">客戶與商機智能管理</li><li data-i18n="c1_d2b">語音拜訪紀錄 AI 整理</li>
+          <li data-i18n="c1_d2c">案件進度智能追蹤</li><li data-i18n="c1_d2d">AI 業績與 KPI 分析</li>
+          <li data-i18n="c1_d2e">主管稽核儀表板</li><li data-i18n="c1_d2f">AI 工作提醒</li>
+        </ul>
+        <div class="dept-result"><strong>0</strong><span data-i18n-html="c1_m2x">人工重複輸入<small>語音紀錄即時完成</small></span></div>
       </div>
       <div class="dept" style="--dept-accent:var(--c3)">
         <h4><i style="background:var(--c3)"></i><span data-i18n="c1_d4">電控部門</span></h4>
-        <p data-i18n="c1_d4x">AI 協助解析多語技術文件，連結專業術語、設備參數、錯誤碼與故障經驗，讓現場更快取得需要的技術資訊。</p>
+        <p data-i18n="c1_d4x">AI 解析英日文技術文件，連結專業術語、設備參數、錯誤碼、安全注意事項與故障經驗，讓工程人員能用自然語言取得翻譯、查詢與排除建議。</p>
+        <div class="dept-cap-label" data-i18n="c1_cap">AI 智能協作內容</div>
+        <ul class="dept-capabilities">
+          <li data-i18n="c1_d4a">英日文技術文件 AI 解析</li><li data-i18n="c1_d4b">技術內容 AI 翻譯</li>
+          <li data-i18n="c1_d4c">專業術語知識庫</li><li data-i18n="c1_d4d">設備參數與錯誤碼查詢</li>
+          <li data-i18n="c1_d4e">安全注意事項整理</li><li data-i18n="c1_d4f">AI 故障排除協助</li>
+          <li data-i18n="c1_d4g">技術知識智能搜尋</li>
+        </ul>
         <div class="dept-result dual">
           <div class="metric"><strong>−75%</strong><span data-i18n="c1_m4x">每日例行作業工時降低</span></div>
           <div class="metric"><strong>−90%</strong><span data-i18n="c1_m5x">技術資料查找時間降低</span></div>
@@ -550,7 +591,7 @@ footer{border-top:1px solid var(--line);padding:44px 0;color:var(--muted);font-s
       </div>
     </div>
     <p class="case-note reveal" data-i18n="c1_note">作業時間數據依導入前後指定工作情境的測試結果估算，實際成效因流程與資料條件而異。</p>
-    <p class="punch reveal" data-i18n-html="c1_p">把翻找、抄寫與等待交給 AI，讓同樣的人力處理更多案件，並將每次作業留下的資料轉化成<b>企業可以持續累積的 AI 知識資產</b>。</p>
+    <p class="punch reveal" data-i18n-html="c1_p">讓 AI 讀懂企業資料、連結跨部門知識並進入實際工作流程，使同樣的人力能處理更多案件，也讓每次作業累積成下一次可以直接使用的<b>企業 AI 智能資產</b>。</p>
   </div>
 </section>
 
@@ -622,31 +663,46 @@ footer{border-top:1px solid var(--line);padding:44px 0;color:var(--muted);font-s
   <div class="wrap">
     <div class="reveal">
       <div class="sec-label">07 — Case Study</div>
-      <h2 data-i18n="c2_t">案例：移工人力服務業</h2>
-      <p class="sec-sub case-intro" data-i18n="c2_sub">將原本分散在紙本、表單、系統與資深員工經驗中的案件流程，整合成以案件為核心的 AI 智能作業系統。AI 從資料建檔與文件辨識開始，協助產出政府表單、追蹤案件進度與特殊事件、管理證件期限與費用，並提供法規查詢與 LINE 外勤即時協作。每次案件處理留下的資料、判斷與經驗，會持續沉澱為企業知識庫。</p>
+      <h2 data-i18n="c2_t">移工人力服務業：AI 智能作業系統與企業知識庫</h2>
+      <p class="sec-sub case-intro" data-i18n="c2_sub">將原本分散在紙本、表單、人工紀錄與資深員工經驗中的作業流程，整合成以案件為核心的 AI 智能作業系統。AI 能辨識證件與文件、整理客戶與移工資料、生成政府表單、理解案件進度與特殊狀況、主動追蹤期限與待辦，並透過自然語言支援內勤及 LINE 外勤人員。每次案件留下的資料、判斷與處理經驗，都會持續形成企業知識庫。</p>
     </div>
     <div class="steps reveal">
-      <div class="step"><i></i><span data-i18n="c2_s1">資料與案件集中</span></div>
-      <div class="step"><i></i><span data-i18n="c2_s2">文件辨識與整理</span></div>
-      <div class="step"><i></i><span data-i18n="c2_s3">政府表單自動產出</span></div>
-      <div class="step"><i></i><span data-i18n="c2_s4">進度與期限追蹤</span></div>
-      <div class="step"><i></i><span data-i18n="c2_s5">費用與法規管理</span></div>
-      <div class="step"><i></i><span data-i18n="c2_s6">外勤協作與知識累積</span></div>
+      <div class="step"><i></i><div class="step-copy"><strong data-i18n="c2_s1">客戶／雇主／移工資料</strong><small data-i18n="c2_s1x">統整案件所需的核心人員、身分與關係資料。</small></div></div>
+      <div class="step"><i></i><div class="step-copy"><strong data-i18n="c2_s2">案件建立與智能集中管理</strong><small data-i18n="c2_s2x">以案件為核心，集中串聯文件、進度、責任人與處理紀錄。</small></div></div>
+      <div class="step"><i></i><div class="step-copy"><strong data-i18n="c2_s3">AI 文件辨識</strong><small data-i18n="c2_s3x">辨識證件與文件內容，自動擷取並整理關鍵資料。</small></div></div>
+      <div class="step"><i></i><div class="step-copy"><strong data-i18n="c2_s4">政府表單與文件自動產出</strong><small data-i18n="c2_s4x">依案件資料智能生成所需表單，減少人工轉錄與重複製作。</small></div></div>
+      <div class="step"><i></i><div class="step-copy"><strong data-i18n="c2_s5">案件進度與歷史知識累積</strong><small data-i18n="c2_s5x">保留處理歷程，讓過往案件與處理經驗可以再次查詢。</small></div></div>
+      <div class="step"><i></i><div class="step-copy"><strong data-i18n="c2_s6">AI 待辦與特殊事件追蹤</strong><small data-i18n="c2_s6x">理解案件狀態，整理待辦、例外狀況與特殊事件。</small></div></div>
+      <div class="step"><i></i><div class="step-copy"><strong data-i18n="c2_s7">證件與期限智能提醒</strong><small data-i18n="c2_s7x">主動整理證件效期、辦理期限與即將到期事項。</small></div></div>
+      <div class="step"><i></i><div class="step-copy"><strong data-i18n="c2_s8">費用／分期／收款／退款</strong><small data-i18n="c2_s8x">AI 依案件脈絡協助查詢費用與各階段款項狀態。</small></div></div>
+      <div class="step"><i></i><div class="step-copy"><strong data-i18n="c2_s9">法規與官方資料 AI 查詢</strong><small data-i18n="c2_s9x">透過自然語言查詢法規、規定與相關官方資料。</small></div></div>
+      <div class="step"><i></i><div class="step-copy"><strong data-i18n="c2_s10">LINE 行動 AI 助手</strong><small data-i18n="c2_s10x">支援外勤現場即時查詢、回報、交辦與案件作業。</small></div></div>
     </div>
-    <div class="qa reveal">
-      <h4 data-i18n="c2_qa">AI 可以直接回答與執行</h4>
-      <div class="qa-grid">
-        <div class="q" data-i18n="c2_q1">「這個案件現在進行到哪裡？」</div>
-        <div class="q" data-i18n="c2_q2">「下個月有哪些證件到期？」</div>
-        <div class="q" data-i18n="c2_q3">「幫我準備這個案件需要的政府文件。」</div>
+    <div class="case2-intelligence reveal">
+      <div class="assist-panel">
+        <h4 data-i18n="c2_assist">AI 在實際工作中的協作能力</h4>
+        <div class="assist-grid">
+          <div class="assist-item" data-i18n="c2_a1">AI 文件辨識</div><div class="assist-item" data-i18n="c2_a2">智能資料整理</div>
+          <div class="assist-item" data-i18n="c2_a3">AI 案件查詢</div><div class="assist-item" data-i18n="c2_a4">表單自動處理</div>
+          <div class="assist-item" data-i18n="c2_a5">智能期限提醒</div><div class="assist-item" data-i18n="c2_a6">內部交辦協作</div>
+          <div class="assist-item" data-i18n="c2_a7">法規 AI 查詢</div><div class="assist-item" data-i18n="c2_a8">行動外勤作業</div>
+        </div>
+      </div>
+      <div class="qa">
+        <h4 data-i18n="c2_qa">用自然語言直接交辦 AI</h4>
+        <div class="qa-grid">
+          <div class="q" data-i18n="c2_q1">「這個案件目前進行到哪裡？還有哪些待辦？」</div>
+          <div class="q" data-i18n="c2_q2">「下個月有哪些證件到期？幫我整理成提醒清單。」</div>
+          <div class="q" data-i18n="c2_q3">「依照這個案件的資料，幫我準備需要的政府文件。」</div>
+        </div>
       </div>
     </div>
     <div class="case-values reveal">
-      <div class="case-value"><strong data-i18n="c2_v1t">降低行政錯誤</strong><p data-i18n="c2_v1">減少重複輸入、文件錯誤與重要期限遺漏。</p></div>
-      <div class="case-value"><strong data-i18n="c2_v2t">提升案件協作</strong><p data-i18n="c2_v2">改善案件查找、內部交辦與外勤即時作業。</p></div>
-      <div class="case-value"><strong data-i18n="c2_v3t">累積企業知識</strong><p data-i18n="c2_v3">降低對個人記憶的依賴，讓歷史經驗持續沉澱。</p></div>
+      <div class="case-value"><strong data-i18n="c2_v1t">文件與資料智能</strong><ul><li data-i18n="c2_v1a">減少重複輸入</li><li data-i18n="c2_v1b">降低文件處理錯誤</li></ul></div>
+      <div class="case-value"><strong data-i18n="c2_v2t">案件風險與協作</strong><ul><li data-i18n="c2_v2a">避免重要期限遺漏</li><li data-i18n="c2_v2b">改善案件查找效率</li><li data-i18n="c2_v2c">支援外勤工作</li></ul></div>
+      <div class="case-value"><strong data-i18n="c2_v3t">產業知識累積</strong><ul><li data-i18n="c2_v3a">降低對個人記憶的依賴</li><li data-i18n="c2_v3b">經驗沉澱為企業知識庫</li></ul></div>
     </div>
-    <p class="punch reveal" data-i18n-html="c2_p">從傳統案件管理，逐步建立企業自己的<b>產業 AI 作業系統與知識庫</b>，讓每一次案件處理都成為下一次可以直接使用的企業經驗。</p>
+    <p class="punch reveal" data-i18n-html="c2_p">讓案件系統從被動記錄，升級為能理解案件脈絡、生成工作文件、主動整理風險並累積產業知識的<b>AI 智能作業中樞</b>。</p>
   </div>
 </section>
 
@@ -775,15 +831,20 @@ en:{
   b1_ai:"AI handles",b1_a1:"Finding information",b1_a2:"Reading documents",b1_a3:"Organizing data",b1_a4:"Repetitive entry",b1_a5:"Summaries & first-pass analysis",
   b1_hu:"People focus on",b1_h1:"Professional judgment",b1_h2:"Communication",b1_h3:"Decision-making",b1_h4:"Creating value",
   b1_p:"Give people's time back to <b>the work that truly needs human judgment</b>.",
-  c1_t:"Case Study: Engineering & Manufacturing",
-  c1_sub:"We reviewed real workflows across design, procurement, sales and electrical control, then connected engineering drawings, supplier quotes, sales records and technical documents to one Enterprise AI Core. AI recognizes, organizes, compares and retrieves information, cutting time spent searching, re-entering and waiting while company knowledge continues to accumulate.",
-  c1_d1:"Design",c1_d1x:"AI understands and organizes engineering drawings, BOMs, versions and design-change data, reducing the manual work behind drawing processing and historical search.",
-  c1_d2:"Sales",c1_d2x:"Customer data, visit records, opportunities and case progress are connected so voice notes can be organized immediately without repeated manual entry.",
-  c1_d3:"Procurement",c1_d3x:"Supplier quotes, historical prices and purchasing terms are brought together for faster lookup, comparison and cost analysis.",
-  c1_d4:"Electrical Control",c1_d4x:"AI parses multilingual technical documents and connects terminology, equipment parameters, error codes and troubleshooting experience so field teams can find answers faster.",
+  c1_t:"Engineering & Manufacturing: AI Workflows Across Four Core Departments",
+  c1_sub:"We brought AI into the core work of design, procurement, sales and electrical control. AI understands engineering drawings, BOMs, supplier quotes, sales records and multilingual technical documents, then performs recognition, semantic search, historical comparison, content generation and work reminders. Data scattered across departments becomes enterprise intelligence that can directly support daily work.",
+  c1_cap:"AI COLLABORATION CAPABILITIES",
+  c1_d1:"Design",c1_d1x:"AI reads engineering drawings and material data, links drawings with BOMs, versions and design changes, and helps engineers complete batch work and retrieve historical design knowledge faster.",
+  c1_d1a:"AI batch drawing processing",c1_d1b:"AI drawing information recognition",c1_d1c:"Intelligent drawing naming and organization",c1_d1d:"Intelligent BOM organization",c1_d1e:"Design-change assistance",c1_d1f:"Version and historical drawing knowledge base",c1_d1g:"Semantic AI search for legacy drawings",
+  c1_d2:"Sales",c1_d2x:"AI understands customers, opportunities, visit content and case progress. It turns voice notes into structured records, organizes follow-up work, tracks progress and helps managers review performance and pending actions.",
+  c1_d2a:"Intelligent customer and opportunity management",c1_d2b:"AI organization of voice visit records",c1_d2c:"Intelligent case progress tracking",c1_d2d:"AI performance and KPI analysis",c1_d2e:"Management review dashboard",c1_d2f:"AI work reminders",
+  c1_d3:"Procurement",c1_d3x:"AI organizes, searches and compares supplier quotes, historical purchase prices and commercial terms so buyers can quickly understand price context, condition differences and cost impact.",
+  c1_d3a:"Intelligent procurement data organization",c1_d3b:"AI supplier quotation comparison",c1_d3c:"Intelligent historical purchase price lookup",c1_d3d:"AI previous-price search",c1_d3e:"Supplier condition comparison",c1_d3f:"AI cost and procurement analysis",
+  c1_d4:"Electrical Control",c1_d4x:"AI parses English and Japanese technical documents and connects terminology, equipment parameters, error codes, safety notes and troubleshooting experience. Engineers can ask in natural language for translations, answers and troubleshooting guidance.",
+  c1_d4a:"AI parsing of English and Japanese technical documents",c1_d4b:"AI technical translation",c1_d4c:"Technical terminology knowledge base",c1_d4d:"Equipment parameter and error-code lookup",c1_d4e:"Safety-note organization",c1_d4f:"AI troubleshooting assistance",c1_d4g:"Intelligent technical knowledge search",
   c1_m1x:"Reduction in batch drawing processing time",c1_m2x:"Repeated manual entry<small>Voice records organized immediately</small>",c1_m3x:"Reduction in historical price lookup time",c1_m4x:"Reduction in daily routine work time",c1_m5x:"Reduction in technical information search time",
   c1_note:"Time reductions are based on before-and-after tests of defined work scenarios. Results vary with workflows and data conditions.",
-  c1_p:"AI takes on searching, re-entry and waiting so the same team can handle more cases, while every workflow leaves behind <b>AI-ready knowledge the company can keep accumulating</b>.",
+  c1_p:"AI reads company data, connects knowledge across departments and enters real workflows. The same team can handle more cases, while every task builds <b>enterprise AI intelligence ready for the next job</b>.",
   m_t:"From single-point AI to enterprise intelligence",
   m_1:"Single-point tools",m_2:"AI enters the workflow",m_3:"Company knowledge accumulates",m_4:"Understands tasks and executes",m_5:"Your company's own intelligence",
   m_p:"AI's value is not one good answer — it's whether <b>enterprise intelligence keeps compounding</b>.",
@@ -793,13 +854,26 @@ en:{
   b2_out:"Output: executable capabilities",
   b2_o1:"Lookup",b2_o2:"Judgment",b2_o3:"Reminders",b2_o4:"Documents",b2_o5:"Tasks",b2_o6:"Analysis",
   b2_p:"The methods in your veterans' heads become <b>capabilities the whole organization can replicate</b>.",
-  c2_t:"Case Study: Migrant Workforce Services",
-  c2_sub:"We brought case workflows scattered across paper, forms, systems and veteran staff experience into an AI-assisted operating system centered on each case. AI supports intake and document recognition, prepares government forms, tracks progress, exceptions and deadlines, manages fees, and provides regulatory lookup and real-time field support through LINE. The data, decisions and experience from every case accumulate as company knowledge.",
-  c2_s1:"Centralized data and cases",c2_s2:"Document recognition and organization",c2_s3:"Automated government forms",c2_s4:"Progress and deadline tracking",c2_s5:"Fees and regulatory management",c2_s6:"Field collaboration and knowledge capture",
-  c2_qa:"AI can answer and act directly",
-  c2_q1:"“Where does this case stand right now?”",c2_q2:"“Which documents expire next month?”",c2_q3:"“Prepare the government documents this case needs.”",
-  c2_v1t:"Reduce administrative errors",c2_v1:"Cut repeated entry, document errors and missed critical deadlines.",c2_v2t:"Improve case collaboration",c2_v2:"Make case lookup, internal handoffs and real-time field work more efficient.",c2_v3t:"Accumulate company knowledge",c2_v3:"Reduce reliance on individual memory and preserve experience from past cases.",
-  c2_p:"Move beyond traditional case management to build <b>the company's own industry AI operating system and knowledge base</b>, so every completed case becomes reusable experience for the next one.",
+  c2_t:"Migrant Workforce Services: AI Operating System and Company Knowledge Base",
+  c2_sub:"We brought workflows scattered across paper, forms, manual records and veteran staff experience into an AI operating system centered on each case. AI recognizes documents, organizes customer and worker data, generates government forms, understands progress and exceptions, proactively tracks deadlines and tasks, and supports office and LINE-based field teams through natural language. The data, decisions and experience from every case continue to build the company's knowledge base.",
+  c2_s1:"Customer, employer and migrant worker data",c2_s1x:"Organize the people, identities and relationships required for each case.",
+  c2_s2:"Intelligent case creation and centralized management",c2_s2x:"Connect documents, progress, owners and work history around each case.",
+  c2_s3:"AI document recognition",c2_s3x:"Recognize IDs and documents, then extract and organize key data automatically.",
+  c2_s4:"Automated government forms and documents",c2_s4x:"Generate required forms from case data and reduce manual transcription and repeated preparation.",
+  c2_s5:"Case progress and historical knowledge",c2_s5x:"Preserve work history so prior cases and handling experience remain searchable.",
+  c2_s6:"AI task and exception tracking",c2_s6x:"Understand case status and organize tasks, exceptions and special events.",
+  c2_s7:"Intelligent document and deadline reminders",c2_s7x:"Proactively organize expirations, processing deadlines and upcoming actions.",
+  c2_s8:"Fees, installments, receipts and refunds",c2_s8x:"Use case context to help staff query fees and payment status at each stage.",
+  c2_s9:"AI regulatory and official information lookup",c2_s9x:"Use natural language to search regulations, requirements and official information.",
+  c2_s10:"LINE mobile AI assistant",c2_s10x:"Support real-time field lookup, reporting, handoffs and case work.",
+  c2_assist:"HOW AI COLLABORATES IN DAILY WORK",
+  c2_a1:"AI document recognition",c2_a2:"Intelligent data organization",c2_a3:"AI case lookup",c2_a4:"Automated form processing",c2_a5:"Intelligent deadline reminders",c2_a6:"Internal handoff collaboration",c2_a7:"AI regulatory lookup",c2_a8:"Mobile field work",
+  c2_qa:"Assign work to AI in natural language",
+  c2_q1:"“Where does this case stand, and what remains to be done?”",c2_q2:"“Which documents expire next month? Put them into a reminder list.”",c2_q3:"“Use this case data to prepare the required government documents.”",
+  c2_v1t:"Document and data intelligence",c2_v1a:"Reduce repeated data entry",c2_v1b:"Reduce document-processing errors",
+  c2_v2t:"Case risk and collaboration",c2_v2a:"Avoid missing critical deadlines",c2_v2b:"Improve case lookup efficiency",c2_v2c:"Support field work",
+  c2_v3t:"Industry knowledge accumulation",c2_v3a:"Reduce reliance on individual memory",c2_v3b:"Turn experience into a company knowledge base",
+  c2_p:"The case system moves beyond passive recordkeeping and becomes <b>an AI operations hub that understands context, generates documents, organizes risk proactively and accumulates industry knowledge</b>.",
   p_t:"From “knowing your data”<br>to “<b>understanding how you think</b>”.",
   p_k1:"Personality",p_k2:"Memory",p_k3:"Context",p_k4:"Relationship",p_k5:"Agency",
   p_l1:"A person's data, conversations, stories and experience",
@@ -854,15 +928,20 @@ ja:{
   b1_ai:"AIが担う",b1_a1:"資料検索",b1_a2:"文書読解",b1_a3:"データ整理",b1_a4:"繰り返し入力",b1_a5:"要約と一次分析",
   b1_hu:"人が集中する",b1_h1:"専門的判断",b1_h2:"コミュニケーション",b1_h3:"意思決定",b1_h4:"価値創造",
   b1_p:"人の時間を、<b>本当に人の判断が必要な仕事</b>へ返す。",
-  c1_t:"導入事例:機械・製造業",
-  c1_sub:"設計・購買・営業・電装の実務フローを整理し、図面、仕入先見積、営業記録、技術文書を1つのEnterprise AI Coreにつなぎました。AIが資料の認識・整理・比較・検索を支援し、探す・転記する・待つ時間を減らしながら、文書・システム・個人の経験に散在していた知識を継続的に蓄積します。",
-  c1_d1:"設計部門",c1_d1x:"AIが図面、BOM、版数、設計変更データを理解・整理し、図面処理と過去資料検索に必要な手作業を減らします。",
-  c1_d2:"営業部門",c1_d2x:"顧客データ、訪問記録、商談、案件進捗を連携し、音声記録の完了後すぐに整理して重複入力をなくします。",
-  c1_d3:"購買部門",c1_d3x:"仕入先見積、過去価格、購買条件を統合し、迅速な検索・比較・コスト分析を支援します。",
-  c1_d4:"電装部門",c1_d4x:"AIが多言語の技術文書を解析し、専門用語、設備パラメータ、エラーコード、障害対応の経験をつなげ、現場が必要な情報を素早く取得できるようにします。",
+  c1_t:"機械・製造業:4つの中核部門へのAI業務導入",
+  c1_sub:"設計・購買・営業・電装の中核業務にAIを導入しました。AIは図面、BOM、仕入先見積、営業記録、多言語の技術文書を理解し、情報認識、意味検索、履歴比較、内容生成、業務リマインドを実行します。部門ごとに散在していたデータを、実務を直接支援できる企業インテリジェンスへ変えます。",
+  c1_cap:"AIによる業務支援",
+  c1_d1:"設計部門",c1_d1x:"AIが図面と資材データを読み取り、図面、BOM、版数、設計変更の関係を自動で構築します。技術者は一括処理と過去の設計ナレッジ検索を迅速に行えます。",
+  c1_d1a:"図面のAI一括処理",c1_d1b:"図面情報のAI認識",c1_d1c:"図面の自動命名・整理",c1_d1d:"BOM資材のインテリジェント整理",c1_d1e:"設計変更支援",c1_d1f:"版数・過去図面ナレッジベース",c1_d1g:"旧図面のAI意味検索",
+  c1_d2:"営業部門",c1_d2x:"AIが顧客、商談、訪問内容、案件進捗を理解し、音声記録を構造化データへ変換します。重要事項の整理、進捗追跡、業績やタスクの把握を支援します。",
+  c1_d2a:"顧客・商談のインテリジェント管理",c1_d2b:"訪問音声記録のAI整理",c1_d2c:"案件進捗のインテリジェント追跡",c1_d2d:"AI業績・KPI分析",c1_d2e:"管理者レビュー用ダッシュボード",c1_d2f:"AI業務リマインド",
+  c1_d3:"購買部門",c1_d3x:"AIが仕入先見積、過去の購買価格、取引条件を横断して整理・検索・比較し、価格の経緯、条件差、コストへの影響を迅速に把握できるよう支援します。",
+  c1_d3a:"購買データのインテリジェント整理",c1_d3b:"仕入先見積のAI比較",c1_d3c:"過去購買価格のインテリジェント検索",c1_d3d:"前回購入価格のAI検索",c1_d3e:"仕入先条件の比較",c1_d3f:"AIコスト・購買分析",
+  c1_d4:"電装部門",c1_d4x:"AIが英語・日本語の技術文書を解析し、専門用語、設備パラメータ、エラーコード、安全上の注意、障害対応経験を接続します。技術者は自然言語で翻訳、検索、対応案を取得できます。",
+  c1_d4a:"英日技術文書のAI解析",c1_d4b:"技術内容のAI翻訳",c1_d4c:"専門用語ナレッジベース",c1_d4d:"設備パラメータ・エラーコード検索",c1_d4e:"安全上の注意事項整理",c1_d4f:"AIトラブルシューティング支援",c1_d4g:"技術ナレッジのインテリジェント検索",
   c1_m1x:"図面一括処理時間を削減",c1_m2x:"人工の重複入力<small>音声記録を即時整理</small>",c1_m3x:"過去価格の検索時間を削減",c1_m4x:"日々の定型作業時間を削減",c1_m5x:"技術資料の検索時間を削減",
   c1_note:"作業時間の数値は、導入前後に同一条件で実施した指定作業の測定結果をもとに算出しています。実際の効果は業務フローやデータ条件によって異なります。",
-  c1_p:"探す・転記する・待つ作業をAIが担い、同じ人員でより多くの案件を処理しながら、業務のたびに残るデータを<b>企業が蓄積し続けられるAIナレッジ資産</b>へ変えます。",
+  c1_p:"AIが企業データを読み取り、部門を越えてナレッジを接続し、実際の業務フローに入ります。同じ人員でより多くの案件を処理しながら、日々の業務を次の仕事にすぐ使える<b>企業AIインテリジェンス資産</b>へ変えます。",
   m_t:"単発のAI活用から、企業インテリジェンスへ",
   m_1:"単体ツール",m_2:"AIが業務フローへ",m_3:"企業ナレッジの蓄積開始",m_4:"タスクを理解し実行",m_5:"企業自身の知能システム",
   m_p:"AIの価値は一度の回答ではなく、<b>企業の知が蓄積され続けるか</b>にあります。",
@@ -872,13 +951,26 @@ ja:{
   b2_out:"出力:実行可能なケイパビリティ",
   b2_o1:"照会",b2_o2:"判断",b2_o3:"リマインド",b2_o4:"書類作成",b2_o5:"タスク",b2_o6:"分析",
   b2_p:"ベテラン社員の頭の中の仕事のやり方を、<b>組織が複製できる能力</b>へ。",
-  c2_t:"導入事例:外国人材サービス業",
-  c2_sub:"紙の書類、各種フォーム、業務システム、ベテラン社員の経験に分散していた案件業務を、案件中心のAI作業システムに統合しました。AIはデータ登録と書類認識から、行政書類の作成、進捗・例外・期限の追跡、費用管理、法令検索、LINEを使った外勤支援までを支援します。案件ごとのデータ・判断・経験は企業ナレッジとして蓄積されます。",
-  c2_s1:"データと案件の集約",c2_s2:"書類認識と整理",c2_s3:"行政書類の自動作成",c2_s4:"進捗と期限の追跡",c2_s5:"費用と法令の管理",c2_s6:"外勤連携とナレッジ蓄積",
-  c2_qa:"AIが直接回答・実行",
-  c2_q1:"「この案件は、いまどこまで進んでいる?」",c2_q2:"「来月期限を迎える証明書は?」",c2_q3:"「この案件に必要な行政書類を準備して。」",
-  c2_v1t:"行政ミスの削減",c2_v1:"重複入力、書類ミス、重要な期限の見逃しを減らします。",c2_v2t:"案件連携の改善",c2_v2:"案件検索、社内の引き継ぎ、外勤でのリアルタイム作業を改善します。",c2_v3t:"企業ナレッジの蓄積",c2_v3:"個人の記憶への依存を減らし、過去の案件経験を継続的に残します。",
-  c2_p:"従来の案件管理を超えて<b>企業独自の産業AI作業システムとナレッジベース</b>を築き、完了した案件を次の案件ですぐに使える企業経験に変えます。",
+  c2_t:"外国人材サービス業:AI業務システムと企業ナレッジベース",
+  c2_sub:"紙の書類、各種フォーム、手作業の記録、ベテラン社員の経験に分散していた業務を、案件中心のAI作業システムに統合しました。AIは証明書や書類を認識し、顧客・外国人材データを整理し、行政書類を作成します。さらに案件進捗と例外を理解し、期限とタスクを能動的に追跡し、自然言語で内勤とLINE外勤を支援します。案件ごとのデータ、判断、処理経験は企業ナレッジベースとして蓄積されます。",
+  c2_s1:"顧客・雇用主・外国人材データ",c2_s1x:"案件に必要な人物、身元、関係情報を整理します。",
+  c2_s2:"案件作成とインテリジェント集中管理",c2_s2x:"案件を中心に書類、進捗、担当者、処理履歴を接続します。",
+  c2_s3:"AI書類認識",c2_s3x:"証明書と書類を認識し、重要データを自動抽出・整理します。",
+  c2_s4:"行政フォーム・書類の自動作成",c2_s4x:"案件データから必要書類を生成し、転記と重複作成を減らします。",
+  c2_s5:"案件進捗と過去ナレッジの蓄積",c2_s5x:"処理履歴を残し、過去案件と対応経験を再検索可能にします。",
+  c2_s6:"AIタスク・例外イベント追跡",c2_s6x:"案件状況を理解し、タスク、例外、特殊事象を整理します。",
+  c2_s7:"証明書・期限のインテリジェント通知",c2_s7x:"有効期限、手続期限、今後の対応を能動的に整理します。",
+  c2_s8:"費用・分割・入金・返金",c2_s8x:"案件の文脈に基づき、各段階の費用と支払状況を照会します。",
+  c2_s9:"法令・公的情報のAI検索",c2_s9x:"自然言語で法令、規定、関連する公的情報を検索します。",
+  c2_s10:"LINEモバイルAIアシスタント",c2_s10x:"外勤現場でのリアルタイム検索、報告、引き継ぎ、案件作業を支援します。",
+  c2_assist:"実務におけるAIの支援能力",
+  c2_a1:"AI書類認識",c2_a2:"インテリジェントなデータ整理",c2_a3:"AI案件検索",c2_a4:"フォーム自動処理",c2_a5:"期限のインテリジェント通知",c2_a6:"社内引き継ぎ連携",c2_a7:"法令AI検索",c2_a8:"モバイル外勤作業",
+  c2_qa:"自然言語でAIへ直接依頼",
+  c2_q1:"「この案件はいまどこまで進み、何が残っている?」",c2_q2:"「来月期限を迎える書類を、リマインド一覧にして。」",c2_q3:"「この案件データから、必要な行政書類を準備して。」",
+  c2_v1t:"書類・データインテリジェンス",c2_v1a:"重複入力を削減",c2_v1b:"書類処理ミスを削減",
+  c2_v2t:"案件リスクと連携",c2_v2a:"重要期限の見落としを防止",c2_v2b:"案件検索効率を改善",c2_v2c:"外勤業務を支援",
+  c2_v3t:"産業ナレッジの蓄積",c2_v3a:"個人の記憶への依存を削減",c2_v3b:"経験を企業ナレッジベースへ蓄積",
+  c2_p:"案件システムを受動的な記録から、案件の文脈を理解し、業務書類を生成し、リスクを能動的に整理しながら産業ナレッジを蓄積する<b>AI業務中枢</b>へ進化させます。",
   p_t:"「あなたのデータを知る」から、<br>「<b>あなたの考え方を理解する</b>」へ。",
   p_k1:"人格 Personality",p_k2:"記憶 Memory",p_k3:"文脈 Context",p_k4:"関係 Relationship",p_k5:"行動 Agency",
   p_l1:"人のデータ・対話・物語・経験",
