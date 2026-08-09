@@ -1,0 +1,1201 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>超智能 SUPER INTELLIGENCE｜企業 AI 流程再造 × 產業 AI 作業系統 × 語氣靈</title>
+<meta name="description" content="超智能協助企業重新設計人與 AI 一起工作的方式——企業 AI 流程再造、產業 AI 智慧作業系統、語氣靈 AI 人格技術。">
+<link rel="icon" href='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><rect width="64" height="64" rx="14" fill="%230A0B0D"/><circle cx="32" cy="32" r="20" fill="none" stroke="%23333A44" stroke-width="2.5"/><circle cx="32" cy="32" r="5.5" fill="%23F2F0EA"/><circle cx="18" cy="21" r="4" fill="%236E9BE8"/><circle cx="47" cy="41" r="4" fill="%23C07BE0"/></svg>'>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Noto+Sans+TC:wght@400;500;700&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0A0B0D; --bg2:#0D1016; --panel:#10141C; --panel2:#131826;
+  --line:#1E2530; --line2:#2A3342;
+  --text:#E9ECF3; --muted:#8B94A7; --cream:#F2F0EA;
+  --c1:#6E9BE8; --c2:#4FBFAE; --c3:#C07BE0; --c4:#E0A24F;
+  --pri:#5B8DEF;
+  --ff:'Space Grotesk','Noto Sans TC','PingFang TC','Microsoft JhengHei',system-ui,sans-serif;
+  --r:18px;
+}
+html[lang="ja"] body,html[lang="ja"] button,html[lang="ja"] .chip{font-family:'Space Grotesk','Noto Sans JP','Hiragino Kaku Gothic ProN','Yu Gothic',system-ui,sans-serif}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{background:var(--bg);color:var(--text);font-family:var(--ff);font-size:16px;line-height:1.7;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+::selection{background:rgba(110,155,232,.35)}
+a{color:inherit;text-decoration:none}
+img{max-width:100%}
+.wrap{max-width:1180px;margin:0 auto;padding:0 24px}
+section{scroll-margin-top:84px;position:relative}
+
+/* ---------- header ---------- */
+.nav{position:fixed;inset:0 0 auto 0;z-index:100;transition:background .3s,border-color .3s;border-bottom:1px solid transparent}
+.nav.scrolled{background:rgba(10,11,13,.82);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-color:var(--line)}
+.nav-in{display:flex;align-items:center;gap:20px;height:68px;max-width:1180px;margin:0 auto;padding:0 24px}
+.logo{display:flex;align-items:center;gap:10px;flex-shrink:0}
+.logo svg{width:30px;height:30px}
+.logo-t{display:flex;flex-direction:column;line-height:1.15}
+.logo-zh{font-weight:700;font-size:17px;letter-spacing:.14em;color:var(--cream)}
+.logo-en{font-size:8.5px;letter-spacing:.32em;color:var(--muted);font-weight:500}
+.nav-links{display:flex;gap:4px;margin-left:auto}
+.nav-links a{padding:8px 13px;border-radius:999px;font-size:14.5px;color:var(--muted);transition:color .2s,background .2s;white-space:nowrap}
+.nav-links a:hover{color:var(--text)}
+.nav-links a.on{color:var(--cream);background:rgba(255,255,255,.06)}
+.lang{display:flex;align-items:center;background:rgba(255,255,255,.05);border:1px solid var(--line);border-radius:999px;padding:3px;flex-shrink:0}
+.lang button{all:unset;cursor:pointer;font-family:var(--ff);font-size:12.5px;font-weight:600;letter-spacing:.05em;color:var(--muted);padding:5px 11px;border-radius:999px;transition:color .2s,background .2s}
+.lang button:hover{color:var(--text)}
+.lang button.on{background:var(--cream);color:#0A0B0D}
+.nav-cta{flex-shrink:0;display:inline-block;padding:9px 18px;border-radius:999px;background:var(--pri);color:#fff;font-size:14px;font-weight:600;transition:filter .2s,transform .2s}
+.nav-cta:hover{filter:brightness(1.12)}
+.burger{all:unset;display:none;cursor:pointer;width:40px;height:40px;flex-shrink:0;position:relative}
+.burger span{position:absolute;left:9px;right:9px;height:2px;background:var(--text);border-radius:2px;transition:transform .25s,opacity .2s,top .25s}
+.burger span:nth-child(1){top:14px}.burger span:nth-child(2){top:20px}.burger span:nth-child(3){top:26px}
+.menu-open .burger span:nth-child(1){top:20px;transform:rotate(45deg)}
+.menu-open .burger span:nth-child(2){opacity:0}
+.menu-open .burger span:nth-child(3){top:20px;transform:rotate(-45deg)}
+.m-menu{display:none;position:fixed;inset:68px 0 0 0;z-index:99;background:rgba(10,11,13,.97);backdrop-filter:blur(16px);padding:28px 24px;flex-direction:column;gap:4px}
+.menu-open .m-menu{display:flex}
+.m-menu a{padding:15px 8px;font-size:19px;font-weight:500;color:var(--text);border-bottom:1px solid var(--line);display:flex;justify-content:space-between;align-items:center}
+.m-menu a small{color:var(--muted);font-size:12px;letter-spacing:.18em}
+.m-menu .m-cta{margin-top:22px;border:0;background:var(--pri);border-radius:14px;justify-content:center;font-weight:700}
+
+/* ---------- hero ---------- */
+.hero{min-height:100svh;display:flex;align-items:center;position:relative;overflow:hidden;padding:110px 0 70px}
+#heroCv{position:absolute;inset:0;width:100%;height:100%}
+.hero-glow{position:absolute;pointer-events:none;filter:none}
+.hg1{width:56vw;height:56vw;right:-14vw;top:-8vw;background:radial-gradient(circle,rgba(91,141,239,.13),transparent 62%)}
+.hg2{width:44vw;height:44vw;left:-14vw;bottom:-14vw;background:radial-gradient(circle,rgba(192,123,224,.09),transparent 62%)}
+.hero-in{position:relative;z-index:2}
+.eyebrow{display:inline-flex;align-items:center;gap:10px;font-size:13px;letter-spacing:.22em;color:var(--muted);font-weight:500;text-transform:uppercase}
+.eyebrow:before{content:"";width:26px;height:1px;background:var(--c1)}
+.hero h1{font-size:clamp(34px,6vw,72px);line-height:1.18;font-weight:700;color:var(--cream);margin:22px 0 24px;letter-spacing:.01em}
+.hero h1 em{font-style:normal;background:linear-gradient(92deg,var(--c1),var(--c3));-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero p{max-width:560px;color:var(--muted);font-size:clamp(15px,1.6vw,17.5px)}
+.hero-cta{display:flex;gap:14px;margin-top:38px;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;gap:9px;padding:13px 26px;border-radius:999px;font-size:15.5px;font-weight:600;transition:transform .2s,filter .2s,background .2s,border-color .2s}
+.btn:active{transform:scale(.97)}
+.btn-p{background:var(--pri);color:#fff}
+.btn-p:hover{filter:brightness(1.12)}
+.btn-g{border:1px solid var(--line2);color:var(--text);background:rgba(255,255,255,.03)}
+.btn-g:hover{border-color:var(--c1);color:var(--cream)}
+.btn .ar{transition:transform .25s}
+.btn:hover .ar{transform:translateX(4px)}
+.hero-tags{display:flex;gap:10px;margin-top:54px;flex-wrap:wrap}
+.htag{font-size:12.5px;letter-spacing:.1em;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:6px 14px;display:inline-flex;align-items:center;gap:8px}
+.htag i{width:7px;height:7px;border-radius:50%;display:inline-block}
+.scroll-hint{position:absolute;left:50%;bottom:26px;transform:translateX(-50%);z-index:2;font-size:10.5px;letter-spacing:.34em;color:var(--muted);display:flex;flex-direction:column;align-items:center;gap:9px}
+.scroll-hint:after{content:"";width:1px;height:34px;background:linear-gradient(var(--muted),transparent);animation:drip 2s infinite}
+@keyframes drip{0%{transform:scaleY(0);transform-origin:top}45%{transform:scaleY(1);transform-origin:top}55%{transform:scaleY(1);transform-origin:bottom}100%{transform:scaleY(0);transform-origin:bottom}}
+
+/* ---------- common section ---------- */
+.sec{padding:104px 0}
+.sec-label{font-size:12.5px;letter-spacing:.26em;color:var(--muted);font-weight:600;display:flex;align-items:center;gap:12px;text-transform:uppercase}
+.sec-label:before{content:"";width:30px;height:1px;background:currentColor;opacity:.5}
+.sec h2{font-size:clamp(26px,3.6vw,42px);line-height:1.3;color:var(--cream);font-weight:700;margin:16px 0 14px;letter-spacing:.01em}
+.sec-sub{color:var(--muted);max-width:640px;font-size:16px}
+.punch{margin-top:56px;padding-top:30px;border-top:1px solid var(--line);font-size:clamp(17px,2.2vw,22px);color:var(--cream);font-weight:500;line-height:1.6}
+.punch b{color:var(--c1);font-weight:600}
+.reveal{opacity:0;transform:translateY(26px);transition:opacity .7s cubic-bezier(.2,.6,.2,1),transform .7s cubic-bezier(.2,.6,.2,1)}
+.reveal.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}}
+@media print{.reveal{opacity:1;transform:none}}
+.no-io .reveal{opacity:1;transform:none}
+
+/* ---------- gap ---------- */
+.gap-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:48px}
+.gcol{background:var(--panel);border:1px solid var(--line);border-radius:var(--r);padding:30px}
+.gcol h3{font-size:13px;letter-spacing:.2em;color:var(--muted);font-weight:600;margin-bottom:22px;display:flex;gap:10px;align-items:center}
+.gcol.bad h3 i,.gcol.okc h3 i{width:8px;height:8px;border-radius:50%}
+.gcol.okc h3 i{background:var(--c2)}
+.gcol.bad h3 i{background:var(--c4)}
+.chips{display:flex;flex-wrap:wrap;gap:10px}
+.chip{font-size:14px;color:var(--text);background:rgba(255,255,255,.045);border:1px solid var(--line2);border-radius:999px;padding:8px 16px}
+.bad-list{display:flex;flex-direction:column;gap:0}
+.bad-list li{list-style:none;padding:12px 2px;border-bottom:1px dashed var(--line);color:#C7CCDA;font-size:15px;display:flex;gap:12px;align-items:baseline}
+.bad-list li:last-child{border-bottom:0}
+.bad-list li:before{content:"×";color:var(--c4);font-weight:700;flex-shrink:0}
+
+/* ---------- services ---------- */
+.svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:52px}
+.svc{background:linear-gradient(180deg,var(--panel2),var(--panel));border:1px solid var(--line);border-radius:22px;padding:26px 26px 30px;position:relative;overflow:hidden;transition:transform .3s,border-color .3s}
+.svc:hover{transform:translateY(-5px)}
+.svc.s1:hover{border-color:rgba(110,155,232,.45)}
+.svc.s2:hover{border-color:rgba(79,191,174,.45)}
+.svc.s3:hover{border-color:rgba(192,123,224,.45)}
+.svc-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:16px}
+.svc-num{font-size:13px;letter-spacing:.18em;color:var(--muted);font-weight:600}
+.svc-l{font-size:11px;letter-spacing:.14em;padding:4px 10px;border-radius:999px;border:1px solid var(--line2);color:var(--muted)}
+.svc-cv{width:100%;height:190px;border-radius:14px;background:#0B0E14;border:1px solid var(--line);display:block}
+.svc-geo{margin:14px 0 4px;font-size:12px;letter-spacing:.16em;font-weight:600;text-transform:uppercase}
+.s1 .svc-geo{color:var(--c1)}.s2 .svc-geo{color:var(--c2)}.s3 .svc-geo{color:var(--c3)}
+.svc h3{font-size:22px;color:var(--cream);margin:6px 0 2px;font-weight:700}
+.svc-en{font-size:12px;letter-spacing:.14em;color:var(--muted);text-transform:uppercase}
+html[lang="en"] .svc-en.dup{display:none}
+.svc p{color:var(--muted);font-size:14.5px;margin:14px 0 18px;min-height:66px}
+.svc .chips .chip{font-size:12px;padding:5px 12px;color:#B9C0D0}
+.svc-strip{margin-top:44px;text-align:center;font-size:clamp(13px,2vw,16px);letter-spacing:.3em;color:var(--muted);font-weight:600}
+.svc-strip b{font-weight:600}
+.svc-strip .w1{color:var(--c1)}.svc-strip .w2{color:var(--c2)}.svc-strip .w3{color:var(--c3)}
+
+/* ---------- biz detail split ---------- */
+.split{display:grid;grid-template-columns:1fr 1fr;gap:26px;margin-top:48px;align-items:stretch}
+.panel{background:var(--panel);border:1px solid var(--line);border-radius:var(--r);padding:28px}
+.panel h4{font-size:13px;letter-spacing:.18em;color:var(--muted);margin-bottom:18px;font-weight:600;display:flex;align-items:center;gap:10px}
+.panel h4 i{width:8px;height:8px;border-radius:50%;flex-shrink:0}
+.arrow-mid{display:flex;align-items:center;justify-content:center;color:var(--muted);font-size:22px}
+.duo{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.mini{background:rgba(255,255,255,.03);border:1px solid var(--line);border-radius:14px;padding:18px}
+.mini h5{font-size:14px;margin-bottom:12px;display:flex;gap:8px;align-items:center;font-weight:700}
+.mini.ai h5{color:var(--c1)}
+.mini.hu h5{color:var(--c4)}
+.mini ul{list-style:none;display:flex;flex-direction:column;gap:8px}
+.mini li{font-size:13.5px;color:#B9C0D0;padding-left:16px;position:relative}
+.mini li:before{content:"";position:absolute;left:0;top:9px;width:6px;height:6px;border-radius:50%;background:currentColor;opacity:.55}
+.mini.ai li:before{color:var(--c1)}
+.mini.hu li:before{color:var(--c4)}
+
+/* ---------- case1 dept grid ---------- */
+.case1{position:relative;display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:48px}
+.dept{background:var(--panel);border:1px solid var(--line);border-radius:var(--r);padding:26px;transition:border-color .3s}
+.dept:hover{border-color:var(--line2)}
+.dept h4{color:var(--cream);font-size:17px;margin-bottom:10px;display:flex;align-items:center;gap:10px;font-weight:700}
+.dept h4 i{width:9px;height:9px;border-radius:50%;flex-shrink:0}
+.dept p{color:var(--muted);font-size:13.5px;line-height:1.9}
+.case1-core{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);z-index:3;width:128px;height:128px;border-radius:50%;background:#0B0E14;border:1px solid var(--line2);box-shadow:0 0 0 10px rgba(10,11,13,.9),0 0 44px rgba(91,141,239,.22);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;text-align:center}
+.case1-core b{font-size:12.5px;letter-spacing:.08em;color:var(--cream);line-height:1.35;font-weight:700}
+.case1-core span{font-size:9.5px;letter-spacing:.2em;color:var(--c1)}
+.case1-core .ring{position:absolute;inset:-9px;border:1px dashed rgba(110,155,232,.35);border-radius:50%;animation:spin 26s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+@media(prefers-reduced-motion:reduce){.case1-core .ring{animation:none}}
+@media(min-width:761px){.case1{column-gap:180px;row-gap:30px}}
+
+/* ---------- maturity ---------- */
+.mat{display:grid;grid-template-columns:repeat(5,1fr);gap:0;margin-top:64px;position:relative}
+.mat:before{content:"";position:absolute;top:7px;left:9%;right:9%;height:2px;background:var(--line)}
+.mat-line{position:absolute;top:7px;left:9%;height:2px;width:0;background:linear-gradient(90deg,var(--c1),var(--c2),var(--c3));transition:width 1.6s cubic-bezier(.3,.6,.2,1)}
+.in .mat-line{width:82%}
+.stage{text-align:center;padding:0 10px;position:relative}
+.stage i{display:block;width:15px;height:15px;border-radius:50%;background:var(--bg);border:2px solid var(--line2);margin:0 auto;position:relative;z-index:2;transition:border-color .5s,box-shadow .5s;transition-delay:var(--d)}
+.in .stage i{border-color:var(--c1);box-shadow:0 0 12px rgba(110,155,232,.5)}
+.stage b{display:block;margin-top:16px;font-size:12px;letter-spacing:.14em;color:var(--muted);font-weight:600}
+.stage strong{display:block;margin-top:5px;font-size:15.5px;color:var(--cream);font-weight:700}
+.stage span{display:block;margin-top:4px;font-size:12.5px;color:var(--muted)}
+
+/* ---------- ios flow ---------- */
+.ios{display:grid;grid-template-columns:1fr auto 1fr auto 1fr;gap:16px;align-items:stretch;margin-top:48px}
+.ios .arrow-mid{font-size:26px;color:var(--line2)}
+.ios-sys{background:radial-gradient(120% 120% at 50% 0%,rgba(79,191,174,.12),transparent 55%),var(--panel2);border:1px solid rgba(79,191,174,.35);border-radius:var(--r);padding:28px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:6px}
+.ios-sys b{color:var(--cream);font-size:18px;line-height:1.4;font-weight:700}
+.ios-sys span{font-size:11px;letter-spacing:.22em;color:var(--c2)}
+
+/* ---------- case2 ---------- */
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:48px;counter-reset:st}
+.step{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:18px 20px;font-size:14.5px;color:#C7CCDA;display:flex;gap:14px;align-items:center;transition:border-color .3s}
+.step:hover{border-color:rgba(79,191,174,.4)}
+.step i{counter-increment:st;flex-shrink:0;width:30px;height:30px;border-radius:10px;background:rgba(79,191,174,.12);border:1px solid rgba(79,191,174,.3);color:var(--c2);display:flex;align-items:center;justify-content:center;font-style:normal;font-size:12.5px;font-weight:700}
+.step i:before{content:counter(st,decimal-leading-zero)}
+.qa{margin-top:34px;background:var(--panel);border:1px solid var(--line);border-radius:var(--r);padding:30px}
+.qa h4{font-size:13px;letter-spacing:.18em;color:var(--c2);margin-bottom:20px;font-weight:600}
+.qa-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.q{background:rgba(255,255,255,.035);border:1px solid var(--line2);border-radius:4px 16px 16px 16px;padding:13px 18px;font-size:14.5px;color:var(--text)}
+
+/* ---------- b3 spirit ---------- */
+.sp-hero{display:grid;grid-template-columns:1.05fr .95fr;gap:40px;align-items:center;margin-top:20px}
+.sp-brand{font-size:clamp(46px,7vw,84px);font-weight:700;color:var(--cream);letter-spacing:.06em;line-height:1.1}
+.sp-brand small{display:block;font-size:12.5px;letter-spacing:.34em;color:var(--c3);margin-top:14px;font-weight:600}
+.sp-title{font-size:clamp(19px,2.4vw,25px);color:var(--text);margin-top:26px;line-height:1.65;font-weight:500}
+.sp-title b{color:var(--c3);font-weight:600}
+.sp-keys{display:flex;gap:10px;flex-wrap:wrap;margin-top:26px}
+#spCv{width:100%;aspect-ratio:1/1;max-width:440px;margin:0 auto;display:block}
+.layers{display:flex;flex-direction:column;gap:12px;margin-top:56px}
+.layer{display:grid;grid-template-columns:92px 1fr;gap:20px;background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:20px 24px;align-items:center;transition:border-color .3s,transform .3s}
+.layer:hover{border-color:rgba(192,123,224,.4);transform:translateX(6px)}
+.layer b{font-size:11.5px;letter-spacing:.16em;color:var(--c3);font-weight:700}
+.layer strong{display:block;color:var(--cream);font-size:16px;font-weight:700}
+.layer span{display:block;color:var(--muted);font-size:13.5px;margin-top:3px}
+.vs{display:grid;grid-template-columns:1fr 84px 1fr;gap:18px;margin-top:56px;align-items:stretch}
+.vs-mid{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;color:var(--muted);text-align:center}
+.vs-mid b{font-size:20px;color:var(--c4);font-weight:700;white-space:nowrap}
+.vs-mid span{font-size:11.5px;letter-spacing:.05em}
+.vscard{background:var(--panel);border:1px solid var(--line);border-radius:var(--r);padding:28px}
+.vscard.win{border-color:rgba(192,123,224,.4);background:linear-gradient(180deg,rgba(192,123,224,.07),var(--panel))}
+.vscard h4{font-size:16px;color:var(--cream);margin-bottom:14px;font-weight:700}
+.vscard.win h4{color:var(--c3)}
+.vscard p{color:var(--muted);font-size:14px;line-height:1.85}
+.vscard q{display:block;margin-top:18px;font-size:15px;color:var(--text);quotes:"「" "」";font-weight:500}
+.vscard q:before{content:open-quote;color:var(--muted)}
+.vscard q:after{content:close-quote;color:var(--muted)}
+
+/* ---------- thesis ---------- */
+.th-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:52px}
+.th{border:1px solid var(--line);border-radius:var(--r);padding:28px;background:var(--panel);text-align:center}
+.th b{font-size:12px;letter-spacing:.24em;font-weight:700;display:block}
+.th.t1 b{color:var(--c1)}.th.t2 b{color:var(--c2)}.th.t3 b{color:var(--c3)}
+.th span{display:block;color:var(--muted);font-size:13.5px;margin-top:12px}
+.th strong{display:block;color:var(--cream);font-size:19px;margin-top:8px;font-weight:700;line-height:1.5}
+.th-state{margin-top:52px;text-align:center;font-size:clamp(17px,2.4vw,23px);color:var(--cream);line-height:1.85;font-weight:500;max-width:900px;margin-left:auto;margin-right:auto}
+.th-state b{background:linear-gradient(92deg,var(--c1),var(--c2),var(--c3));-webkit-background-clip:text;background-clip:text;color:transparent;font-weight:600}
+
+/* ---------- contact ---------- */
+.contact{padding:130px 0 120px;text-align:center;position:relative;overflow:hidden}
+.contact:before{content:"";position:absolute;inset:auto 0 0 0;height:100%;background:radial-gradient(60% 55% at 50% 100%,rgba(91,141,239,.12),transparent 70%)}
+.contact h2{font-size:clamp(26px,4vw,46px);color:var(--cream);line-height:1.5;font-weight:700;position:relative}
+.contact p{color:var(--muted);margin:22px 0 40px;position:relative}
+.contact .btn{position:relative}
+.contact-mail{display:block;margin-top:26px;color:var(--muted);font-size:14px;letter-spacing:.06em;position:relative}
+.contact-mail a:hover{color:var(--c1)}
+
+/* ---------- footer ---------- */
+footer{border-top:1px solid var(--line);padding:44px 0;color:var(--muted);font-size:13.5px}
+.foot{display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap}
+.foot .logo-zh{font-size:15px}
+.foot-r{text-align:right;line-height:2}
+#toTop{position:fixed;right:22px;bottom:22px;z-index:90;width:44px;height:44px;border-radius:50%;border:1px solid var(--line2);background:rgba(16,20,28,.9);color:var(--text);cursor:pointer;font-size:17px;opacity:0;pointer-events:none;transition:opacity .3s,border-color .2s;backdrop-filter:blur(8px)}
+#toTop.show{opacity:1;pointer-events:auto}
+#toTop:hover{border-color:var(--c1);color:var(--c1)}
+
+/* ---------- responsive ---------- */
+@media(max-width:1024px){
+  .nav-links{display:none}
+  .burger{display:block}
+  .lang{margin-left:auto}
+  .nav-in{gap:12px}
+  .nav-cta{display:none}
+  .svc-grid{grid-template-columns:1fr;max-width:640px;margin-left:auto;margin-right:auto}
+  .svc p{min-height:0}
+  .steps{grid-template-columns:1fr 1fr}
+  .sp-hero{grid-template-columns:1fr;gap:10px}
+  #spCv{max-width:360px}
+}
+@media(max-width:760px){
+  .sec{padding:78px 0}
+  .gap-grid,.split,.duo,.qa-grid,.th-grid{grid-template-columns:1fr}
+  .arrow-mid{transform:rotate(90deg);padding:2px 0}
+  .ios{grid-template-columns:1fr}
+  .case1{grid-template-columns:1fr;padding-top:0}
+  .case1-core{position:static;transform:none;width:100%;height:auto;border-radius:16px;padding:16px;box-shadow:none;flex-direction:row;justify-content:center;gap:10px;order:-1}
+  .case1-core .ring{display:none}
+  .mat{grid-template-columns:1fr;gap:26px;margin-top:40px}
+  .mat:before,.mat-line{display:none}
+  .stage{display:grid;grid-template-columns:15px 1fr;gap:0 16px;text-align:left;align-items:start}
+  .stage i{margin:7px 0 0}
+  .stage b{grid-column:2;margin-top:0}
+  .stage strong{grid-column:2}
+  .stage span{grid-column:2}
+  .steps{grid-template-columns:1fr}
+  .vs{grid-template-columns:1fr}
+  .vs-mid{padding:6px 0}
+  .layer{grid-template-columns:1fr;gap:6px}
+  .foot{flex-direction:column;text-align:center}
+  .foot-r{text-align:center}
+  .hero-tags{gap:8px}
+  .htag{font-size:11.5px;padding:5px 11px}
+}
+</style>
+</head>
+<body>
+
+<header class="nav" id="nav">
+  <div class="nav-in">
+    <a class="logo" href="#home" aria-label="超智能 SUPER INTELLIGENCE">
+      <svg viewBox="0 0 64 64" fill="none" aria-hidden="true"><circle cx="32" cy="32" r="21" stroke="#333A44" stroke-width="3"/><circle cx="32" cy="32" r="6" fill="#F2F0EA"/><circle cx="17" cy="20" r="4.5" fill="#6E9BE8"/><circle cx="48" cy="42" r="4.5" fill="#C07BE0"/><circle cx="45" cy="17" r="3.5" fill="#4FBFAE"/></svg>
+      <span class="logo-t"><span class="logo-zh" data-i18n="brand">超智能</span><span class="logo-en">SUPER INTELLIGENCE</span></span>
+    </a>
+    <nav class="nav-links" aria-label="主選單">
+      <a href="#gap" data-i18n="nav1">問題所在</a>
+      <a href="#services" data-i18n="nav2">三大業務</a>
+      <a href="#case1" data-i18n="nav3">產業案例</a>
+      <a href="#spirit">語氣靈</a>
+      <a href="#thesis" data-i18n="nav5">核心理念</a>
+    </nav>
+    <div class="lang" role="group" aria-label="Language">
+      <button type="button" data-lang="zh" class="on">中</button>
+      <button type="button" data-lang="en">EN</button>
+      <button type="button" data-lang="ja">日</button>
+    </div>
+    <a class="nav-cta" href="#contact" data-i18n="nav6">聯絡我們</a>
+    <button class="burger" id="burger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
+  <div class="m-menu" id="mmenu">
+    <a href="#gap"><span data-i18n="nav1">問題所在</span><small>THE GAP</small></a>
+    <a href="#services"><span data-i18n="nav2">三大業務</span><small>BUSINESS</small></a>
+    <a href="#case1"><span data-i18n="nav3">產業案例</span><small>CASES</small></a>
+    <a href="#spirit"><span>語氣靈</span><small>PERSONALITY</small></a>
+    <a href="#thesis"><span data-i18n="nav5">核心理念</span><small>THESIS</small></a>
+    <a href="#contact" class="m-cta"><span data-i18n="nav6">聯絡我們</span></a>
+  </div>
+</header>
+
+<!-- ============ HERO ============ -->
+<section class="hero" id="home">
+  <canvas id="heroCv" aria-hidden="true"></canvas>
+  <div class="hero-glow hg1"></div>
+  <div class="hero-glow hg2"></div>
+  <div class="wrap hero-in">
+    <span class="eyebrow" data-i18n="h_eye">企業流程 × 產業智慧 × AI 人格</span>
+    <h1 data-i18n-html="h_t">讓 AI 真正進入企業，<br>也真正<em>理解人</em>。</h1>
+    <p data-i18n="h_sub">超智能協助企業重新設計人與 AI 一起工作的方式——從工作流程、產業知識，到人的思考方式。</p>
+    <div class="hero-cta">
+      <a class="btn btn-p" href="#services"><span data-i18n="h_c1">了解三大業務</span><span class="ar">→</span></a>
+      <a class="btn btn-g" href="#contact"><span data-i18n="h_c2">預約諮詢</span></a>
+    </div>
+    <div class="hero-tags">
+      <span class="htag"><i style="background:var(--c1)"></i><span data-i18n="h_tg1">企業 AI 流程再造</span></span>
+      <span class="htag"><i style="background:var(--c2)"></i><span data-i18n="h_tg2">產業 AI 智慧作業系統</span></span>
+      <span class="htag"><i style="background:var(--c3)"></i><span data-i18n="h_tg3">語氣靈 AI 人格技術</span></span>
+    </div>
+  </div>
+  <div class="scroll-hint">SCROLL</div>
+</section>
+
+<!-- ============ GAP ============ -->
+<section class="sec" id="gap">
+  <div class="wrap">
+    <div class="reveal">
+      <div class="sec-label">01 — The Gap</div>
+      <h2 data-i18n="g_t">企業缺的不是另一個 AI 工具。</h2>
+    </div>
+    <div class="gap-grid">
+      <div class="gcol okc reveal">
+        <h3><i></i><span data-i18n="g_c1">現在，企業已大量使用</span></h3>
+        <div class="chips">
+          <span class="chip">ChatGPT</span>
+          <span class="chip" data-i18n="g_a1">AI 助手</span>
+          <span class="chip" data-i18n="g_a2">自動化工具</span>
+          <span class="chip">SaaS</span>
+          <span class="chip">Copilot</span>
+        </div>
+      </div>
+      <div class="gcol bad reveal">
+        <h3><i></i><span data-i18n="g_c2">但這些問題，仍然存在</span></h3>
+        <ul class="bad-list">
+          <li data-i18n="g_b1">資料散落各處</li>
+          <li data-i18n="g_b2">流程沒有串起來</li>
+          <li data-i18n="g_b3">大量人工輸入</li>
+          <li data-i18n="g_b4">知識只存在人腦</li>
+          <li data-i18n="g_b5">AI 不理解企業脈絡</li>
+          <li data-i18n="g_b6">AI 不理解人的判斷</li>
+        </ul>
+      </div>
+    </div>
+    <p class="punch reveal" data-i18n-html="g_p">真正的問題，是 <b>AI 還沒有進入工作的核心</b>。</p>
+  </div>
+</section>
+
+<!-- ============ SERVICES ============ -->
+<section class="sec" id="services" style="background:var(--bg2)">
+  <div class="wrap">
+    <div class="reveal">
+      <div class="sec-label">02 — Business Lines</div>
+      <h2 data-i18n="s_t">三大核心業務</h2>
+      <p class="sec-sub" data-i18n="s_sub">從工作，到產業，再到人——三條業務線，對應智慧的三個層次。</p>
+    </div>
+    <div class="svc-grid">
+      <article class="svc s1 reveal">
+        <div class="svc-top"><span class="svc-num">BUSINESS 01</span><span class="svc-l">L1 · WORKFLOW</span></div>
+        <canvas class="svc-cv" id="cvFlow" aria-hidden="true"></canvas>
+        <div class="svc-geo"><span data-i18n="s1_geo">亂流 → 秩序</span></div>
+        <h3 data-i18n="s1_t">企業 AI 流程再造</h3>
+        <div class="svc-en dup">Enterprise AI Transformation</div>
+        <p data-i18n="s1_d">把既有工作流程，重新設計成人與 AI 共同工作的流程。分散混亂的任務流，經過 AI 核心，匯整為清晰的協作流。</p>
+        <div class="chips">
+          <span class="chip" data-i18n="s1_k1">流程盤點</span>
+          <span class="chip" data-i18n="s1_k2">文件智能</span>
+          <span class="chip" data-i18n="s1_k3">知識庫</span>
+          <span class="chip">AI Agent</span>
+          <span class="chip" data-i18n="s1_k5">系統整合</span>
+        </div>
+      </article>
+      <article class="svc s2 reveal">
+        <div class="svc-top"><span class="svc-num">BUSINESS 02</span><span class="svc-l">L2 · KNOWLEDGE</span></div>
+        <canvas class="svc-cv" id="cvGrid" aria-hidden="true"></canvas>
+        <div class="svc-geo"><span data-i18n="s2_geo">散點 → 晶格</span></div>
+        <h3 data-i18n="s2_t">產業 AI 智慧作業系統</h3>
+        <div class="svc-en dup">Industry AI Operating System</div>
+        <p data-i18n="s2_d">把一個產業的工作方法，變成 AI 可以共同執行的系統。散落的知識點，結晶成有秩序的智慧網格。</p>
+        <div class="chips">
+          <span class="chip" data-i18n="s2_k1">產業 Know-how</span>
+          <span class="chip" data-i18n="s2_k2">案件管理</span>
+          <span class="chip" data-i18n="s2_k3">規則與法規</span>
+          <span class="chip" data-i18n="s2_k4">文件</span>
+          <span class="chip" data-i18n="s2_k5">AI 作業流程</span>
+        </div>
+      </article>
+      <article class="svc s3 reveal">
+        <div class="svc-top"><span class="svc-num">BUSINESS 03</span><span class="svc-l">L3 · PERSONALITY</span></div>
+        <canvas class="svc-cv" id="cvOrbit" aria-hidden="true"></canvas>
+        <div class="svc-geo"><span data-i18n="s3_geo">軌道 × 核心</span></div>
+        <h3>語氣靈</h3>
+        <div class="svc-en">AI Personality Infrastructure</div>
+        <p data-i18n="s3_d">讓 AI 從「知道一個人的資料」，進化到「理解這個人會怎麼想」。記憶、情境、關係與行動，環繞人格核心持續運行。</p>
+        <div class="chips">
+          <span class="chip" data-i18n="s3_k1">人格</span>
+          <span class="chip" data-i18n="s3_k2">記憶</span>
+          <span class="chip" data-i18n="s3_k3">價值判斷</span>
+          <span class="chip" data-i18n="s3_k4">語氣與情緒</span>
+          <span class="chip" data-i18n="s3_k5">數位分身</span>
+        </div>
+      </article>
+    </div>
+    <div class="svc-strip reveal"><b class="w1">WORKFLOW</b> → <b class="w2">KNOWLEDGE</b> → <b class="w3">PERSONALITY</b></div>
+  </div>
+</section>
+
+<!-- ============ BIZ 01 DETAIL ============ -->
+<section class="sec" id="b1">
+  <div class="wrap">
+    <div class="reveal">
+      <div class="sec-label" style="color:var(--c1)">03 — Enterprise AI Transformation</div>
+      <h2 data-i18n-html="b1_t">不是導入一套 AI，<br>而是重新設計工作的方式。</h2>
+    </div>
+    <div class="split">
+      <div class="panel reveal">
+        <h4><i style="background:var(--c4)"></i><span data-i18n="b1_bf">原本：全部由人承擔</span></h4>
+        <div class="chips">
+          <span class="chip" data-i18n="b1_x1">找資料</span>
+          <span class="chip" data-i18n="b1_x2">看文件</span>
+          <span class="chip" data-i18n="b1_x3">整理</span>
+          <span class="chip" data-i18n="b1_x4">輸入</span>
+          <span class="chip" data-i18n="b1_x5">報表</span>
+          <span class="chip" data-i18n="b1_x6">分析</span>
+          <span class="chip" data-i18n="b1_x7">決策</span>
+        </div>
+      </div>
+      <div class="panel reveal">
+        <h4><i style="background:var(--c1)"></i><span data-i18n="b1_af">之後：人與 AI 分工</span></h4>
+        <div class="duo">
+          <div class="mini ai">
+            <h5 data-i18n="b1_ai">AI 處理</h5>
+            <ul>
+              <li data-i18n="b1_a1">找資料</li>
+              <li data-i18n="b1_a2">讀文件</li>
+              <li data-i18n="b1_a3">資料整理</li>
+              <li data-i18n="b1_a4">重複輸入</li>
+              <li data-i18n="b1_a5">摘要與初步分析</li>
+            </ul>
+          </div>
+          <div class="mini hu">
+            <h5 data-i18n="b1_hu">人專注</h5>
+            <ul>
+              <li data-i18n="b1_h1">專業判斷</li>
+              <li data-i18n="b1_h2">溝通</li>
+              <li data-i18n="b1_h3">決策</li>
+              <li data-i18n="b1_h4">創造價值</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <p class="punch reveal" data-i18n-html="b1_p">把人的時間，還給<b>真正需要人判斷的事情</b>。</p>
+  </div>
+</section>
+
+<!-- ============ CASE 1 ============ -->
+<section class="sec" id="case1" style="background:var(--bg2)">
+  <div class="wrap">
+    <div class="reveal">
+      <div class="sec-label">04 — Case Study</div>
+      <h2 data-i18n="c1_t">案例：工程製造業</h2>
+      <p class="sec-sub" data-i18n="c1_sub">一個 Enterprise AI Core，同時服務四個部門的日常工作。</p>
+    </div>
+    <div class="case1 reveal">
+      <div class="case1-core"><div class="ring"></div><b>Enterprise<br>AI Core</b><span>CORE</span></div>
+      <div class="dept"><h4><i style="background:var(--c1)"></i><span data-i18n="c1_d1">設計部</span></h4><p data-i18n="c1_d1x">工程圖面辨識 · 圖框資訊 · 圖面命名 · BOM · 版本管理 · 舊圖搜尋</p></div>
+      <div class="dept"><h4><i style="background:var(--c2)"></i><span data-i18n="c1_d2">業務部</span></h4><p data-i18n="c1_d2x">CRM · 語音拜訪紀錄 · 商機管理 · 案件進度 · 業績分析 · 主管儀表板</p></div>
+      <div class="dept"><h4><i style="background:var(--c4)"></i><span data-i18n="c1_d3">採購部</span></h4><p data-i18n="c1_d3x">採購單 · 供應商報價 · 歷史價格 · 前購價搜尋 · 價格比較 · 成本分析</p></div>
+      <div class="dept"><h4><i style="background:var(--c3)"></i><span data-i18n="c1_d4">電控部</span></h4><p data-i18n="c1_d4x">英日技術手冊翻譯 · 術語統一 · 設備參數 · 錯誤碼 · 故障排除 · 技術知識庫</p></div>
+    </div>
+    <p class="punch reveal" data-i18n-html="c1_p">將散落在文件、系統與個人經驗中的知識，轉化成<b>企業可以持續累積的 AI 資產</b>。</p>
+  </div>
+</section>
+
+<!-- ============ MATURITY ============ -->
+<section class="sec" id="maturity">
+  <div class="wrap">
+    <div class="reveal">
+      <div class="sec-label">05 — Maturity</div>
+      <h2 data-i18n="m_t">從單點 AI，走向企業智慧</h2>
+    </div>
+    <div class="mat reveal">
+      <div class="mat-line"></div>
+      <div class="stage" style="--d:.1s"><i></i><b>STAGE 1</b><strong>AI Tool</strong><span data-i18n="m_1">單點工具</span></div>
+      <div class="stage" style="--d:.35s"><i></i><b>STAGE 2</b><strong>AI Workflow</strong><span data-i18n="m_2">AI 進入工作流程</span></div>
+      <div class="stage" style="--d:.6s"><i></i><b>STAGE 3</b><strong>Knowledge</strong><span data-i18n="m_3">企業知識開始累積</span></div>
+      <div class="stage" style="--d:.85s"><i></i><b>STAGE 4</b><strong>AI Agent</strong><span data-i18n="m_4">理解任務並執行</span></div>
+      <div class="stage" style="--d:1.1s"><i></i><b>STAGE 5</b><strong>Enterprise Intelligence</strong><span data-i18n="m_5">企業自己的智慧系統</span></div>
+    </div>
+    <p class="punch reveal" data-i18n-html="m_p">AI 的價值，不在一次回答，而在<b>企業智慧能不能持續累積</b>。</p>
+  </div>
+</section>
+
+<!-- ============ BIZ 02 DETAIL ============ -->
+<section class="sec" id="b2" style="background:var(--bg2)">
+  <div class="wrap">
+    <div class="reveal">
+      <div class="sec-label" style="color:var(--c2)">06 — Industry AI OS</div>
+      <h2 data-i18n="b2_t">把產業 Know-how，變成 AI 可以理解的作業系統。</h2>
+    </div>
+    <div class="ios">
+      <div class="panel reveal">
+        <h4><i style="background:var(--c2)"></i><span data-i18n="b2_in">輸入：產業現場</span></h4>
+        <div class="chips">
+          <span class="chip" data-i18n="b2_i1">案件</span>
+          <span class="chip" data-i18n="b2_i2">文件</span>
+          <span class="chip" data-i18n="b2_i3">規則</span>
+          <span class="chip" data-i18n="b2_i4">法規</span>
+          <span class="chip" data-i18n="b2_i5">流程</span>
+          <span class="chip" data-i18n="b2_i6">期限</span>
+          <span class="chip" data-i18n="b2_i7">費用</span>
+          <span class="chip" data-i18n="b2_i8">經驗</span>
+        </div>
+      </div>
+      <div class="arrow-mid">→</div>
+      <div class="ios-sys reveal">
+        <span>SYSTEM</span>
+        <b>Industry AI<br>Operating System</b>
+      </div>
+      <div class="arrow-mid">→</div>
+      <div class="panel reveal">
+        <h4><i style="background:var(--c2)"></i><span data-i18n="b2_out">輸出：可執行能力</span></h4>
+        <div class="chips">
+          <span class="chip" data-i18n="b2_o1">查詢</span>
+          <span class="chip" data-i18n="b2_o2">判斷</span>
+          <span class="chip" data-i18n="b2_o3">提醒</span>
+          <span class="chip" data-i18n="b2_o4">文件</span>
+          <span class="chip" data-i18n="b2_o5">任務</span>
+          <span class="chip" data-i18n="b2_o6">分析</span>
+          <span class="chip">AI Agent</span>
+        </div>
+      </div>
+    </div>
+    <p class="punch reveal" data-i18n-html="b2_p">把資深員工腦袋裡的工作方法，變成<b>可以被組織複製的能力</b>。</p>
+  </div>
+</section>
+
+<!-- ============ CASE 2 ============ -->
+<section class="sec" id="case2">
+  <div class="wrap">
+    <div class="reveal">
+      <div class="sec-label">07 — Case Study</div>
+      <h2 data-i18n="c2_t">案例：人力仲介業</h2>
+      <p class="sec-sub" data-i18n="c2_sub">案件生命週期，全程由 AI 共同執行。</p>
+    </div>
+    <div class="steps reveal">
+      <div class="step"><i></i><span data-i18n="c2_s1">客戶／雇主／移工資料</span></div>
+      <div class="step"><i></i><span data-i18n="c2_s2">案件建立</span></div>
+      <div class="step"><i></i><span data-i18n="c2_s3">AI 文件辨識（護照／身分證）</span></div>
+      <div class="step"><i></i><span data-i18n="c2_s4">政府表單自動帶入</span></div>
+      <div class="step"><i></i><span data-i18n="c2_s5">案件進度與待辦</span></div>
+      <div class="step"><i></i><span data-i18n="c2_s6">證件與體檢期限提醒</span></div>
+      <div class="step"><i></i><span data-i18n="c2_s7">收款／分期／退款管理</span></div>
+      <div class="step"><i></i><span data-i18n="c2_s8">法規與政府資料查詢</span></div>
+      <div class="step"><i></i><span data-i18n="c2_s9">LINE AI 行動助手</span></div>
+    </div>
+    <div class="qa reveal">
+      <h4 data-i18n="c2_qa">AI 可以直接回答 —</h4>
+      <div class="qa-grid">
+        <div class="q" data-i18n="c2_q1">「這個案件現在進行到哪裡？」</div>
+        <div class="q" data-i18n="c2_q2">「下個月有哪些證件到期？」</div>
+        <div class="q" data-i18n="c2_q3">「這個流程要用哪份政府表單？」</div>
+        <div class="q" data-i18n="c2_q4">「幫我準備這個案件需要的文件。」</div>
+      </div>
+    </div>
+    <p class="punch reveal" data-i18n-html="c2_p">從案件管理系統，進化成<b>產業 AI 助手</b>。</p>
+  </div>
+</section>
+
+<!-- ============ BIZ 03 · 語氣靈 ============ -->
+<section class="sec" id="spirit" style="background:var(--bg2)">
+  <div class="wrap">
+    <div class="reveal">
+      <div class="sec-label" style="color:var(--c3)">08 — AI Personality</div>
+    </div>
+    <div class="sp-hero">
+      <div class="reveal">
+        <div class="sp-brand">語氣靈<small>AI PERSONALITY INFRASTRUCTURE</small></div>
+        <p class="sp-title" data-i18n-html="p_t">讓 AI 從「知道你的資料」，<br>進化到「<b>理解你會怎麼想</b>」。</p>
+        <div class="sp-keys chips">
+          <span class="chip" data-i18n="p_k1">人格 Personality</span>
+          <span class="chip" data-i18n="p_k2">記憶 Memory</span>
+          <span class="chip" data-i18n="p_k3">情境 Context</span>
+          <span class="chip" data-i18n="p_k4">關係 Relationship</span>
+          <span class="chip" data-i18n="p_k5">行動 Agency</span>
+        </div>
+      </div>
+      <canvas id="spCv" aria-hidden="true"></canvas>
+    </div>
+    <div class="layers">
+      <div class="layer reveal"><b>LAYER 1</b><div><strong>Human Experience</strong><span data-i18n="p_l1">人的資料、對話、故事、經驗</span></div></div>
+      <div class="layer reveal"><b>LAYER 2</b><div><strong data-i18n="p_l2t">Personality Modeling 人格建模</strong><span data-i18n="p_l2">價值排序 · 決策邏輯 · 底線 · 衝突選擇 · 思考方式</span></div></div>
+      <div class="layer reveal"><b>LAYER 3</b><div><strong data-i18n="p_l3t">Personality Runtime 人格運行時</strong><span data-i18n="p_l3">在不同情境下，持續維持人格一致性</span></div></div>
+      <div class="layer reveal"><b>LAYER 4</b><div><strong>Memory × Context × Relationship</strong><span data-i18n="p_l4">長期記憶 · 當下情境 · 人物關係</span></div></div>
+      <div class="layer reveal"><b>LAYER 5</b><div><strong>Embodied AI</strong><span data-i18n="p_l5">文字 · 聲音 · AI Agent · 即時語音 · 虛擬人 · 數位分身</span></div></div>
+    </div>
+    <div class="vs">
+      <div class="vscard reveal">
+        <h4 data-i18n="p_v1t">一般 AI 分身</h4>
+        <p data-i18n="p_v1">知道姓名、履歷、文章、知識、聲音。</p>
+        <q data-i18n="p_v1q">像是在模仿這個人。</q>
+      </div>
+      <div class="vs-mid reveal"><b>Data ≠<br>Personality</b><span data-i18n="p_neq">資料，不等於人格。</span></div>
+      <div class="vscard win reveal">
+        <h4>語氣靈</h4>
+        <p data-i18n="p_v2">理解這個人重視什麼、怎麼判斷、什麼情況會拒絕、如何面對衝突、不同關係怎麼說話、過去發生什麼、現在是什麼情境。</p>
+        <q data-i18n="p_v2q">像是這個人的思考方式，正在持續存在。</q>
+      </div>
+    </div>
+    <p class="punch reveal" data-i18n-html="p_p">語氣靈不只是 Prompt。它是一套由<b>人格、記憶、情境、關係與行動</b>共同運作的 AI 人格基礎設施。</p>
+  </div>
+</section>
+
+<!-- ============ THESIS ============ -->
+<section class="sec" id="thesis">
+  <div class="wrap">
+    <div class="reveal">
+      <div class="sec-label">09 — One Thesis</div>
+      <h2 data-i18n="t_t">三種業務，其實是一件事</h2>
+    </div>
+    <div class="th-grid">
+      <div class="th t1 reveal"><b>01 · WORKFLOW</b><span data-i18n="t_1s">企業 AI 流程再造</span><strong data-i18n="t_1">這家公司，怎麼工作？</strong></div>
+      <div class="th t2 reveal"><b>02 · KNOWLEDGE</b><span data-i18n="t_2s">產業 AI 智慧作業系統</span><strong data-i18n="t_2">這個產業，怎麼工作？</strong></div>
+      <div class="th t3 reveal"><b>03 · PERSONALITY</b><span>語氣靈</span><strong data-i18n="t_3">這個人，怎麼思考？</strong></div>
+    </div>
+    <p class="th-state reveal" data-i18n-html="t_p">超智能，把存在於人、流程、文件與經驗中的智慧，<br>轉化成 <b>AI 可以理解、累積與持續執行的智慧系統</b>。</p>
+  </div>
+</section>
+
+<!-- ============ CONTACT ============ -->
+<section class="contact" id="contact">
+  <div class="wrap">
+    <h2 data-i18n-html="cl_t">我們不是把 AI 加進既有世界。<br>我們重新設計，人與 AI 一起工作的方式。</h2>
+    <p data-i18n="cl_sub">想知道你的企業、你的產業，可以從哪裡開始？</p>
+    <a class="btn btn-p" href="mailto:contact@superintelligence.ai"><span data-i18n="cl_cta">與我們聊聊</span><span class="ar">→</span></a>
+    <span class="contact-mail"><a href="mailto:contact@superintelligence.ai">contact@superintelligence.ai</a></span>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap foot">
+    <div>
+      <div class="logo-zh">超智能 <span style="color:var(--muted);font-size:11px;letter-spacing:.2em">SUPER INTELLIGENCE</span></div>
+      <div style="margin-top:6px" data-i18n="f_tag">企業流程 × 產業智慧 × AI 人格</div>
+    </div>
+    <div class="foot-r">
+      <div data-i18n="f_co">© 2026 超智能股份有限公司 SUPER INTELLIGENCE Co., Ltd.</div>
+      <div>WORKFLOW → KNOWLEDGE → PERSONALITY</div>
+    </div>
+  </div>
+</footer>
+
+<button id="toTop" aria-label="Back to top">↑</button>
+<script>
+/* ================= i18n ================= */
+const META={
+  zh:{title:"超智能 SUPER INTELLIGENCE｜企業 AI 流程再造 × 產業 AI 作業系統 × 語氣靈",
+      desc:"超智能協助企業重新設計人與 AI 一起工作的方式——企業 AI 流程再造、產業 AI 智慧作業系統、語氣靈 AI 人格技術。"},
+  en:{title:"SUPER INTELLIGENCE | Enterprise AI Transformation × Industry AI OS × AI Personality",
+      desc:"SUPER INTELLIGENCE redesigns how people and AI work together — enterprise AI transformation, industry AI operating systems, and the 語氣靈 AI personality infrastructure."},
+  ja:{title:"超智能 SUPER INTELLIGENCE｜企業AI業務改革 × 産業AI-OS × AIパーソナリティ",
+      desc:"SUPER INTELLIGENCEは、人とAIが共に働く仕組みを再設計します——企業AI業務改革、産業AIオペレーティングシステム、語氣靈AIパーソナリティ基盤。"}
+};
+const DICT={
+en:{
+  nav1:"The Gap",nav2:"What We Do",nav3:"Case Studies",nav5:"Our Thesis",nav6:"Contact",
+  h_eye:"Enterprise Workflow × Industry Intelligence × AI Personality",
+  h_t:"Bring AI into the core of work.<br>Teach it to truly <em>understand people</em>.",
+  h_sub:"SUPER INTELLIGENCE redesigns how people and AI work together — across workflows, industry knowledge, and the way people think.",
+  h_c1:"Explore our work",h_c2:"Book a consultation",
+  h_tg1:"Enterprise AI Transformation",h_tg2:"Industry AI Operating System",h_tg3:"語氣靈 · AI Personality",
+  g_t:"Businesses don't need another AI tool.",
+  g_c1:"Already in heavy use",g_a1:"AI assistants",g_a2:"Automation tools",
+  g_c2:"Yet these problems remain",
+  g_b1:"Data scattered everywhere",g_b2:"Workflows aren't connected",g_b3:"Heavy manual input",g_b4:"Knowledge lives only in people's heads",g_b5:"AI doesn't understand business context",g_b6:"AI doesn't understand human judgment",
+  g_p:"The real problem: <b>AI hasn't reached the core of how work gets done</b>.",
+  s_t:"Three core businesses",
+  s_sub:"From work, to industry, to people — three business lines for three layers of intelligence.",
+  s1_geo:"Chaos → Order",s1_t:"Enterprise AI Transformation",
+  s1_d:"We redesign existing workflows into processes where people and AI work side by side. Tangled task flows pass through an AI core and emerge as clean, parallel streams.",
+  s1_k1:"Process mapping",s1_k2:"Document intelligence",s1_k3:"Knowledge base",s1_k5:"System integration",
+  s2_geo:"Scattered → Structured",s2_t:"Industry AI Operating System",
+  s2_d:"We turn how an industry works into a system AI can operate together with you. Scattered points of know-how crystallize into an ordered lattice of intelligence.",
+  s2_k1:"Industry know-how",s2_k2:"Case management",s2_k3:"Rules & regulations",s2_k4:"Documents",s2_k5:"AI-run workflows",
+  s3_geo:"Orbits × Core",
+  s3_d:"We take AI from knowing someone's data to understanding how they think. Memory, context, relationships and action orbit a persistent personality core.",
+  s3_k1:"Personality",s3_k2:"Memory",s3_k3:"Value judgment",s3_k4:"Tone & emotion",s3_k5:"Digital twin",
+  b1_t:"Not “installing an AI” —<br>redesigning how work is done.",
+  b1_bf:"Before: people carry everything",
+  b1_x1:"Searching files",b1_x2:"Reading documents",b1_x3:"Organizing",b1_x4:"Data entry",b1_x5:"Reports",b1_x6:"Analysis",b1_x7:"Decisions",
+  b1_af:"After: people and AI split the work",
+  b1_ai:"AI handles",b1_a1:"Finding information",b1_a2:"Reading documents",b1_a3:"Organizing data",b1_a4:"Repetitive entry",b1_a5:"Summaries & first-pass analysis",
+  b1_hu:"People focus on",b1_h1:"Professional judgment",b1_h2:"Communication",b1_h3:"Decision-making",b1_h4:"Creating value",
+  b1_p:"Give people's time back to <b>the work that truly needs human judgment</b>.",
+  c1_t:"Case Study: Engineering & Manufacturing",
+  c1_sub:"One Enterprise AI Core, serving the daily work of four departments.",
+  c1_d1:"Design",c1_d1x:"Drawing recognition · Title-block data · Drawing naming · BOM · Version control · Legacy drawing search",
+  c1_d2:"Sales",c1_d2x:"CRM · Voice visit logs · Pipeline management · Case tracking · Sales analytics · Executive dashboards",
+  c1_d3:"Procurement",c1_d3x:"Purchase orders · Supplier quotes · Price history · Past-price search · Price comparison · Cost analysis",
+  c1_d4:"Electrical Control",c1_d4x:"EN–JA manual translation · Terminology consistency · Equipment parameters · Error codes · Troubleshooting · Technical knowledge base",
+  c1_p:"Knowledge scattered across documents, systems and personal experience becomes <b>an AI asset your company keeps accumulating</b>.",
+  m_t:"From single-point AI to enterprise intelligence",
+  m_1:"Single-point tools",m_2:"AI enters the workflow",m_3:"Company knowledge accumulates",m_4:"Understands tasks and executes",m_5:"Your company's own intelligence",
+  m_p:"AI's value is not one good answer — it's whether <b>enterprise intelligence keeps compounding</b>.",
+  b2_t:"Turning industry know-how into an operating system AI can understand.",
+  b2_in:"Input: from the field",
+  b2_i1:"Cases",b2_i2:"Documents",b2_i3:"Rules",b2_i4:"Regulations",b2_i5:"Processes",b2_i6:"Deadlines",b2_i7:"Fees",b2_i8:"Experience",
+  b2_out:"Output: executable capabilities",
+  b2_o1:"Lookup",b2_o2:"Judgment",b2_o3:"Reminders",b2_o4:"Documents",b2_o5:"Tasks",b2_o6:"Analysis",
+  b2_p:"The methods in your veterans' heads become <b>capabilities the whole organization can replicate</b>.",
+  c2_t:"Case Study: Manpower Agency",
+  c2_sub:"The entire case lifecycle, executed together with AI.",
+  c2_s1:"Client, employer & worker records",c2_s2:"Case creation",c2_s3:"AI document recognition (passports / IDs)",c2_s4:"Auto-filled government forms",c2_s5:"Case status & to-dos",c2_s6:"Document & medical-check expiry reminders",c2_s7:"Payments, installments & refunds",c2_s8:"Regulation & government data lookup",c2_s9:"LINE AI mobile assistant",
+  c2_qa:"Ask the AI directly —",
+  c2_q1:"“Where does this case stand right now?”",c2_q2:"“Which documents expire next month?”",c2_q3:"“Which government form does this step need?”",c2_q4:"“Prepare the documents this case needs.”",
+  c2_p:"From a case-management system to <b>an industry AI assistant</b>.",
+  p_t:"From “knowing your data”<br>to “<b>understanding how you think</b>”.",
+  p_k1:"Personality",p_k2:"Memory",p_k3:"Context",p_k4:"Relationship",p_k5:"Agency",
+  p_l1:"A person's data, conversations, stories and experience",
+  p_l2t:"Personality Modeling",p_l2:"Value priorities · Decision logic · Boundaries · Trade-off choices · Ways of thinking",
+  p_l3t:"Personality Runtime",p_l3:"Keeps the personality consistent across every context",
+  p_l4:"Long-term memory · Present context · Personal relationships",
+  p_l5:"Text · Voice · AI agents · Real-time speech · Virtual humans · Digital twins",
+  p_v1t:"Typical AI clones",p_v1:"Know the name, the résumé, the writing, the knowledge, the voice.",
+  p_v1q:"It feels like an imitation of the person.",
+  p_neq:"Data is not personality.",
+  p_v2:"Understands what this person values, how they judge, when they would refuse, how they face conflict, how they speak in each relationship, what happened before, and what's happening now.",
+  p_v2q:"It feels like this person's way of thinking, still present.",
+  p_p:"語氣靈 is not a prompt. It's an AI personality infrastructure where <b>personality, memory, context, relationships and agency</b> operate as one.",
+  t_t:"Three businesses. One thesis.",
+  t_1s:"Enterprise AI Transformation",t_1:"How does this company work?",
+  t_2s:"Industry AI Operating System",t_2:"How does this industry work?",
+  t_3:"How does this person think?",
+  t_p:"SUPER INTELLIGENCE turns the intelligence living in people, processes, documents and experience<br>into <b>systems AI can understand, accumulate and continuously execute</b>.",
+  cl_t:"We don't bolt AI onto the existing world.<br>We redesign how people and AI work together.",
+  cl_sub:"Wondering where your company — or your industry — could start?",
+  cl_cta:"Talk to us",
+  f_tag:"Enterprise Workflow × Industry Intelligence × AI Personality",
+  f_co:"© 2026 SUPER INTELLIGENCE Co., Ltd. All rights reserved."
+},
+ja:{
+  nav1:"課題",nav2:"事業内容",nav3:"導入事例",nav5:"理念",nav6:"お問い合わせ",
+  h_eye:"企業プロセス × 産業インテリジェンス × AIパーソナリティ",
+  h_t:"AIを、仕事の中核へ。<br>そして、人を<em>理解する</em>AIへ。",
+  h_sub:"SUPER INTELLIGENCEは、業務フロー・産業ナレッジ・人の思考にわたり、人とAIが共に働く仕組みを再設計します。",
+  h_c1:"事業内容を見る",h_c2:"ご相談はこちら",
+  h_tg1:"企業AI業務改革",h_tg2:"産業AIオペレーティングシステム",h_tg3:"語氣靈 · AIパーソナリティ",
+  g_t:"企業に足りないのは、新しいAIツールではない。",
+  g_c1:"すでに広く使われている",g_a1:"AIアシスタント",g_a2:"自動化ツール",
+  g_c2:"それでも残る課題",
+  g_b1:"データが散在している",g_b2:"業務フローがつながっていない",g_b3:"大量の手作業入力",g_b4:"ナレッジが個人の頭の中にしかない",g_b5:"AIが企業の文脈を理解していない",g_b6:"AIが人の判断を理解していない",
+  g_p:"本当の課題は、<b>AIがまだ仕事の中核に入っていない</b>ことです。",
+  s_t:"3つのコア事業",
+  s_sub:"仕事から、産業へ、そして人へ——知能の3つの層に対応する3つの事業。",
+  s1_geo:"混沌 → 秩序",s1_t:"企業AI業務改革",
+  s1_d:"既存の業務フローを、人とAIが協働するプロセスへと再設計します。絡み合ったタスクの流れがAIコアを通り、整然とした並行ストリームになります。",
+  s1_k1:"業務プロセス棚卸し",s1_k2:"ドキュメントAI",s1_k3:"ナレッジベース",s1_k5:"システム連携",
+  s2_geo:"散在 → 結晶格子",s2_t:"産業AIオペレーティングシステム",
+  s2_d:"業界の仕事のやり方を、AIと共に実行できるシステムへ。散在するナレッジの点が、秩序ある知の格子へと結晶化します。",
+  s2_k1:"業界ノウハウ",s2_k2:"案件管理",s2_k3:"規則・法令",s2_k4:"書類",s2_k5:"AI業務フロー",
+  s3_geo:"軌道 × 核",
+  s3_d:"AIを「その人のデータを知る」から「その人の考え方を理解する」へ。記憶・文脈・関係・行動が、人格のコアを中心に回り続けます。",
+  s3_k1:"人格",s3_k2:"記憶",s3_k3:"価値判断",s3_k4:"語調と感情",s3_k5:"デジタルツイン",
+  b1_t:"AIを「導入」するのではなく、<br>働き方そのものを再設計する。",
+  b1_bf:"従来:すべてを人が抱える",
+  b1_x1:"資料探し",b1_x2:"文書確認",b1_x3:"整理",b1_x4:"入力",b1_x5:"レポート",b1_x6:"分析",b1_x7:"意思決定",
+  b1_af:"これから:人とAIの分業",
+  b1_ai:"AIが担う",b1_a1:"資料検索",b1_a2:"文書読解",b1_a3:"データ整理",b1_a4:"繰り返し入力",b1_a5:"要約と一次分析",
+  b1_hu:"人が集中する",b1_h1:"専門的判断",b1_h2:"コミュニケーション",b1_h3:"意思決定",b1_h4:"価値創造",
+  b1_p:"人の時間を、<b>本当に人の判断が必要な仕事</b>へ返す。",
+  c1_t:"導入事例:機械・製造業",
+  c1_sub:"1つのEnterprise AI Coreが、4つの部門の日常業務を支えます。",
+  c1_d1:"設計部",c1_d1x:"図面認識 · 図枠情報 · 図面命名 · BOM · 版数管理 · 過去図面検索",
+  c1_d2:"営業部",c1_d2x:"CRM · 音声訪問記録 · 商談管理 · 案件進捗 · 業績分析 · 管理者ダッシュボード",
+  c1_d3:"購買部",c1_d3x:"発注書 · 仕入先見積 · 価格履歴 · 過去購入価格検索 · 価格比較 · コスト分析",
+  c1_d4:"電装部",c1_d4x:"英日技術マニュアル翻訳 · 用語統一 · 設備パラメータ · エラーコード · トラブルシューティング · 技術ナレッジベース",
+  c1_p:"文書・システム・個人の経験に散在する知識を、<b>企業が蓄積し続けられるAI資産</b>へ。",
+  m_t:"単発のAI活用から、企業インテリジェンスへ",
+  m_1:"単体ツール",m_2:"AIが業務フローへ",m_3:"企業ナレッジの蓄積開始",m_4:"タスクを理解し実行",m_5:"企業自身の知能システム",
+  m_p:"AIの価値は一度の回答ではなく、<b>企業の知が蓄積され続けるか</b>にあります。",
+  b2_t:"業界ノウハウを、AIが理解できるオペレーティングシステムへ。",
+  b2_in:"入力:産業の現場",
+  b2_i1:"案件",b2_i2:"書類",b2_i3:"規則",b2_i4:"法令",b2_i5:"フロー",b2_i6:"期限",b2_i7:"費用",b2_i8:"経験",
+  b2_out:"出力:実行可能なケイパビリティ",
+  b2_o1:"照会",b2_o2:"判断",b2_o3:"リマインド",b2_o4:"書類作成",b2_o5:"タスク",b2_o6:"分析",
+  b2_p:"ベテラン社員の頭の中の仕事のやり方を、<b>組織が複製できる能力</b>へ。",
+  c2_t:"導入事例:人材仲介業",
+  c2_sub:"案件のライフサイクル全体を、AIと共に実行。",
+  c2_s1:"顧客・雇用主・労働者データ",c2_s2:"案件登録",c2_s3:"AI書類認識(パスポート・身分証)",c2_s4:"行政書類の自動入力",c2_s5:"案件進捗とタスク",c2_s6:"証明書・健康診断の期限リマインド",c2_s7:"入金・分割・返金管理",c2_s8:"法令・行政情報の照会",c2_s9:"LINE AIモバイルアシスタント",
+  c2_qa:"AIにそのまま聞けます —",
+  c2_q1:"「この案件、いまどこまで進んでいる?」",c2_q2:"「来月期限切れになる証明書は?」",c2_q3:"「この手続きにはどの行政書類が必要?」",c2_q4:"「この案件に必要な書類を準備して。」",
+  c2_p:"案件管理システムから、<b>産業AIアシスタント</b>へ。",
+  p_t:"「あなたのデータを知る」から、<br>「<b>あなたの考え方を理解する</b>」へ。",
+  p_k1:"人格 Personality",p_k2:"記憶 Memory",p_k3:"文脈 Context",p_k4:"関係 Relationship",p_k5:"行動 Agency",
+  p_l1:"人のデータ・対話・物語・経験",
+  p_l2t:"Personality Modeling 人格モデリング",p_l2:"価値観の優先順位 · 意思決定ロジック · 譲れない一線 · 葛藤時の選択 · 思考様式",
+  p_l3t:"Personality Runtime 人格ランタイム",p_l3:"あらゆる文脈で、人格の一貫性を維持",
+  p_l4:"長期記憶 · 現在の文脈 · 人間関係",
+  p_l5:"テキスト · 音声 · AIエージェント · リアルタイム音声 · バーチャルヒューマン · デジタルツイン",
+  p_v1t:"一般的なAI分身",p_v1:"名前・経歴・文章・知識・声を知っている。",
+  p_v1q:"その人の模倣に見える。",
+  p_neq:"データは、人格ではない。",
+  p_v2:"その人が何を大切にし、どう判断し、どんな時に断り、衝突にどう向き合い、相手によってどう話し方を変え、過去に何があり、いまどんな状況なのかを理解する。",
+  p_v2q:"その人の思考が、生き続けているように感じる。",
+  p_p:"語氣靈は単なるプロンプトではありません。<b>人格・記憶・文脈・関係・行動</b>が一体となって動く、AIパーソナリティ基盤です。",
+  t_t:"3つの事業は、実はひとつのこと",
+  t_1s:"企業AI業務改革",t_1:"この会社は、どう働くのか?",
+  t_2s:"産業AIオペレーティングシステム",t_2:"この産業は、どう動くのか?",
+  t_3:"この人は、どう考えるのか?",
+  t_p:"SUPER INTELLIGENCEは、人・プロセス・文書・経験の中に宿る知を、<br><b>AIが理解し、蓄積し、実行し続けられる知能システム</b>へと変えます。",
+  cl_t:"既存の世界にAIを付け足すのではない。<br>人とAIが共に働く仕組みを、再設計する。",
+  cl_sub:"御社では、御社の業界では、どこから始められるのか。",
+  cl_cta:"お問い合わせ",
+  f_tag:"企業プロセス × 産業インテリジェンス × AIパーソナリティ",
+  f_co:"© 2026 超智能股份有限公司 SUPER INTELLIGENCE Co., Ltd."
+}};
+
+const ZH_T={},ZH_H={};
+let curLang="zh";
+function captureZH(){
+  document.querySelectorAll("[data-i18n]").forEach(el=>{const k=el.dataset.i18n;if(!(k in ZH_T))ZH_T[k]=el.textContent;});
+  document.querySelectorAll("[data-i18n-html]").forEach(el=>{const k=el.dataset.i18nHtml;if(!(k in ZH_H))ZH_H[k]=el.innerHTML;});
+}
+function setLang(l){
+  curLang=l;
+  document.documentElement.lang = l==="zh"?"zh-Hant":l;
+  document.title=META[l].title;
+  const md=document.querySelector('meta[name="description"]');
+  if(md)md.setAttribute("content",META[l].desc);
+  document.querySelectorAll("[data-i18n]").forEach(el=>{
+    const k=el.dataset.i18n;
+    el.textContent = l==="zh" ? ZH_T[k] : (DICT[l][k] ?? ZH_T[k]);
+  });
+  document.querySelectorAll("[data-i18n-html]").forEach(el=>{
+    const k=el.dataset.i18nHtml;
+    el.innerHTML = l==="zh" ? ZH_H[k] : (DICT[l][k] ?? ZH_H[k]);
+  });
+  document.querySelectorAll(".lang button").forEach(b=>b.classList.toggle("on",b.dataset.lang===l));
+  try{
+    const u=new URL(location.href);u.searchParams.set("lang",l);
+    history.replaceState(null,"",u.pathname+"?"+u.searchParams.toString()+u.hash);
+  }catch(e){}
+}
+function initLang(){
+  captureZH();
+  let l=null;
+  try{l=new URL(location.href).searchParams.get("lang");}catch(e){}
+  if(!["zh","en","ja"].includes(l)){
+    const n=(navigator.language||"zh").toLowerCase();
+    l = n.startsWith("zh")?"zh":n.startsWith("ja")?"ja":"en";
+  }
+  if(l!=="zh")setLang(l);else setLang("zh");
+  document.querySelectorAll(".lang button").forEach(b=>b.addEventListener("click",()=>setLang(b.dataset.lang)));
+}
+</script>
+<script>
+/* ================= palette ================= */
+const C1="#6E9BE8",C2="#4FBFAE",C3="#C07BE0",C4="#E0A24F",CREAM="#F2F0EA",RING="#333A44",PRI="#5B8DEF";
+const REDUCED=matchMedia("(prefers-reduced-motion: reduce)").matches;
+const clamp=(v,a,b)=>v<a?a:v>b?b:v;
+const lerp=(a,b,t)=>a+(b-a)*t;
+const sm=(t)=>{t=clamp(t,0,1);return t*t*(3-2*t)};
+const easeIO=(t)=>{t=clamp(t,0,1);return t<.5?4*t*t*t:1-Math.pow(-2*t+2,3)/2};
+const r01=(n)=>{const s=Math.sin(n*127.1+311.7)*43758.5453;return s-Math.floor(s)};
+
+/* ================= anim engine ================= */
+const ANIMS=[];
+function makeAnim(cv,setup,draw,fps){
+  if(!cv)return;
+  const a={cv,ctx:cv.getContext("2d"),setup,draw,fps:fps||0,vis:false,last:0,W:0,H:0,d:null};
+  a.resize=()=>{
+    const r=cv.getBoundingClientRect();
+    if(r.width<4||r.height<4)return;
+    const dpr=Math.min(devicePixelRatio||1,2);
+    a.W=r.width;a.H=r.height;
+    cv.width=Math.round(r.width*dpr);cv.height=Math.round(r.height*dpr);
+    a.ctx.setTransform(dpr,0,0,dpr,0,0);
+    a.d=a.setup(a.W,a.H);
+    if(REDUCED)a.draw2(2.6);
+  };
+  a.draw2=(t)=>{a.ctx.clearRect(0,0,a.W,a.H);a.draw(a.ctx,t,a.W,a.H,a.d)};
+  ANIMS.push(a);
+  return a;
+}
+const animIO=new IntersectionObserver(es=>{
+  es.forEach(e=>{const a=ANIMS.find(x=>x.cv===e.target);if(a)a.vis=e.isIntersecting});
+},{threshold:.04});
+function startAnims(){
+  ANIMS.forEach(a=>{a.resize();animIO.observe(a.cv)});
+  if(REDUCED)return;
+  const t0=performance.now();
+  const loop=(now)=>{
+    if(!document.hidden){
+      const t=(now-t0)/1000;
+      for(const a of ANIMS){
+        if(!a.vis||!a.d)continue;
+        if(a.fps&&now-a.last<1000/a.fps)continue;
+        a.last=now;a.draw2(t);
+      }
+    }
+    requestAnimationFrame(loop);
+  };
+  requestAnimationFrame(loop);
+  let rt;addEventListener("resize",()=>{clearTimeout(rt);rt=setTimeout(()=>ANIMS.forEach(a=>a.resize()),160)});
+}
+
+/* ============ helpers ============ */
+function glowSprite(color,size){
+  const c=document.createElement("canvas");c.width=c.height=size;
+  const x=c.getContext("2d");
+  const g=x.createRadialGradient(size/2,size/2,0,size/2,size/2,size/2);
+  g.addColorStop(0,color);g.addColorStop(1,"rgba(0,0,0,0)");
+  x.fillStyle=g;x.fillRect(0,0,size,size);
+  return c;
+}
+const glows={};
+function glow(ctx,color,x,y,r,alpha){
+  if(!glows[color])glows[color]=glowSprite(color,64);
+  ctx.globalAlpha=alpha;ctx.drawImage(glows[color],x-r,y-r,r*2,r*2);ctx.globalAlpha=1;
+}
+
+/* ============ 01 FLOW · 亂流 → 秩序 ============ */
+makeAnim(document.getElementById("cvFlow"),(W,H)=>{
+  const lanes=4,m=H*.2,gate=W*.52;
+  const laneY=[...Array(lanes)].map((_,i)=>m+i*(H-2*m)/(lanes-1));
+  const parts=[];
+  for(let i=0;i<lanes;i++)for(let j=0;j<6;j++){
+    parts.push({l:i,off:r01(i*17+j*7)* (W+40),sp:40+r01(i*3+j)*22,
+      a:r01(i*5+j*11)*6.28,b:r01(i*9+j*3)*6.28,dir:(i+j)%2?1:-1});
+  }
+  const yAt=(x,p)=>{
+    const s=sm((x-(gate-80))/120);
+    const amp=H*.32*(1-s)*p.dir;
+    return clamp(laneY[p.l]+(Math.sin(x*.030+p.a)*.62+Math.sin(x*.012+p.b)*.38)*amp,8,H-8);
+  };
+  const bg=document.createElement("canvas");
+  const dpr=Math.min(devicePixelRatio||1,2);
+  bg.width=W*dpr;bg.height=H*dpr;
+  const bx=bg.getContext("2d");bx.setTransform(dpr,0,0,dpr,0,0);
+  bx.lineWidth=1;
+  parts.slice(0,lanes*2).forEach((p,k)=>{
+    if(k%2)return;
+    bx.strokeStyle=C1;bx.globalAlpha=.10;bx.beginPath();
+    for(let x=0;x<=W;x+=6){const y=yAt(x,p);x?bx.lineTo(x,y):bx.moveTo(x,y)}
+    bx.stroke();
+  });
+  laneY.forEach(y=>{bx.strokeStyle=C1;bx.globalAlpha=.14;bx.beginPath();bx.moveTo(gate+26,y);bx.lineTo(W,y);bx.stroke()});
+  bx.globalAlpha=.16;bx.strokeStyle=C1;bx.beginPath();bx.moveTo(gate,6);bx.lineTo(gate,H-6);bx.stroke();
+  bx.globalAlpha=.9;bx.save();bx.translate(gate,H/2);bx.rotate(Math.PI/4);bx.strokeStyle=C1;bx.strokeRect(-6,-6,12,12);bx.restore();
+  bx.globalAlpha=1;
+  return{parts,yAt,gate,bg,laneY};
+},(ctx,t,W,H,d)=>{
+  ctx.drawImage(d.bg,0,0,W,H);
+  for(const p of d.parts){
+    const x=((t*p.sp+p.off)%(W+40))-20;
+    if(x<-10||x>W+10)continue;
+    const y=d.yAt(x,p),post=x>d.gate;
+    ctx.globalAlpha=post?.95:.55;
+    ctx.strokeStyle=C1;ctx.lineWidth=1;
+    ctx.beginPath();ctx.moveTo(x-9,d.yAt(x-9,p));ctx.lineTo(x,y);ctx.stroke();
+    ctx.fillStyle=post?CREAM:C1;
+    ctx.beginPath();ctx.arc(x,y,post?2:1.7,0,6.29);ctx.fill();
+    if(post)glow(ctx,C1,x,y,6,.20);
+  }
+  ctx.globalAlpha=1;
+  const pp=(t*.5)%1;
+  ctx.strokeStyle=C1;ctx.globalAlpha=(1-pp)*.45;ctx.lineWidth=1.2;
+  ctx.beginPath();ctx.arc(d.gate,H/2,7+pp*24,0,6.29);ctx.stroke();
+  ctx.globalAlpha=1;
+});
+
+/* ============ 02 LATTICE · 散點 → 晶格 ============ */
+makeAnim(document.getElementById("cvGrid"),(W,H)=>{
+  const cols=Math.max(6,Math.round(W/46)),rows=Math.max(4,Math.round(H/44));
+  const mx=W*.09,my=H*.14,N=cols*rows;
+  const pts=[];
+  for(let r=0;r<rows;r++)for(let c=0;c<cols;c++){
+    const i=r*cols+c;
+    pts.push({gx:mx+c*(W-2*mx)/(cols-1),gy:my+r*(H-2*my)/(rows-1),i});
+  }
+  const cx=W/2,cy=H/2;
+  const maxD=Math.hypot(cx-mx,cy-my);
+  pts.forEach(p=>{p.d=Math.hypot(p.gx-cx,p.gy-cy)/maxD});
+  const edges=[];
+  for(let r=0;r<rows;r++)for(let c=0;c<cols;c++){
+    const i=r*cols+c;
+    if(c<cols-1)edges.push([i,i+1]);
+    if(r<rows-1)edges.push([i,i+cols]);
+  }
+  return{pts,edges,cols,rows,W,H,maxD,cx,cy};
+},(ctx,t,W,H,d)=>{
+  const T=9,tt=t%T,cyc=Math.floor(t/T);
+  const gAll=clamp((tt-2.1)/2.1,0,1)*(1-clamp((tt-7.2)/.9,0,1));
+  const pos=[];
+  for(const p of d.pts){
+    const rx=14+r01(p.i*7.1+cyc*3.7)*(W-28),ry=12+r01(p.i*13.3+cyc*5.1)*(H-24);
+    const delay=.8+p.d*1.15+r01(p.i)*.5;
+    const m=easeIO((tt-delay)/1.5)*(1-clamp((tt-7.4)/1.0,0,1));
+    const wob=(1-m)*3;
+    pos.push([lerp(rx,p.gx,m)+Math.sin(t*.9+p.i)*wob,lerp(ry,p.gy,m)+Math.cos(t*.8+p.i*2)*wob,m]);
+  }
+  if(gAll>.02){
+    ctx.lineWidth=1;ctx.strokeStyle=C2;
+    for(let e=0;e<d.edges.length;e++){
+      const[a,b]=d.edges[e];
+      ctx.globalAlpha=.20*gAll*(.45+.55*r01(e*3.3));
+      ctx.beginPath();ctx.moveTo(pos[a][0],pos[a][1]);ctx.lineTo(pos[b][0],pos[b][1]);ctx.stroke();
+    }
+  }
+  const rip=gAll>.85?((tt-4.2)*120)%(d.maxD+90):-999;
+  for(let i=0;i<pos.length;i++){
+    const p=d.pts[i],[x,y,m]=pos[i];
+    let r=2,al=lerp(.3,.9,m)*(1-clamp((tt-7.4)/1.0,0,1)*.9)+.06;
+    if(rip>0){
+      const distPx=Math.hypot(p.gx-d.cx,p.gy-d.cy);
+      const b=Math.exp(-Math.pow(distPx-rip,2)/(2*26*26));
+      r+=b*1.8;al=clamp(al+b*.6,0,1);
+      if(b>.35)glow(ctx,C2,x,y,7,b*.3);
+    }
+    ctx.globalAlpha=al;ctx.fillStyle=C2;
+    ctx.beginPath();ctx.arc(x,y,r,0,6.29);ctx.fill();
+  }
+  ctx.globalAlpha=1;
+});
+
+/* ============ 03 ORBIT · 軌道 × 核心 ============ */
+function orbitSetup(scale){return(W,H)=>{
+  const cx=W/2,cy=H/2,base=(Math.min(W,H)/2-8)*scale;
+  const rings=[{R:base*.38,k:.94},{R:base*.66,k:.9},{R:base*.94,k:.97}];
+  const sats=[
+    {g:0,sp:.6,ph:.4,col:C1},{g:1,sp:-.36,ph:2.3,col:C3},
+    {g:1,sp:.3,ph:5.2,col:C4},{g:2,sp:.2,ph:1.1,col:C2}
+  ];
+  const dust=[...Array(12)].map((_,i)=>({g:2,sp:.05+r01(i)*.04,ph:r01(i*3)*6.28}));
+  const bg=document.createElement("canvas");
+  const dpr=Math.min(devicePixelRatio||1,2);
+  bg.width=W*dpr;bg.height=H*dpr;
+  const bx=bg.getContext("2d");bx.setTransform(dpr,0,0,dpr,0,0);
+  rings.forEach(r=>{
+    bx.strokeStyle=RING;bx.globalAlpha=.6;bx.lineWidth=1;
+    bx.beginPath();bx.ellipse(cx,cy,r.R,r.R*r.k,0,0,6.29);bx.stroke();
+  });
+  return{cx,cy,base,rings,sats,dust,bg,W,H};
+}}
+function orbitDraw(ctx,t,W,H,d){
+  ctx.drawImage(d.bg,0,0,d.W,d.H);
+  const cr=Math.min(d.base*.085,13)*(1+.12*Math.sin(t*1.5));
+  glow(ctx,CREAM,d.cx,d.cy,cr*4.2,.22);
+  ctx.fillStyle=CREAM;ctx.beginPath();ctx.arc(d.cx,d.cy,cr,0,6.29);ctx.fill();
+  for(const s of d.dust){
+    const r=d.rings[s.g],a=s.ph+t*s.sp;
+    const x=d.cx+r.R*Math.cos(a),y=d.cy+r.R*r.k*Math.sin(a);
+    ctx.globalAlpha=.4;ctx.fillStyle=RING;
+    ctx.beginPath();ctx.arc(x,y,1.1,0,6.29);ctx.fill();
+  }
+  ctx.globalAlpha=1;
+  for(const s of d.sats){
+    const r=d.rings[s.g],a=s.ph+t*s.sp;
+    const x=d.cx+r.R*Math.cos(a),y=d.cy+r.R*r.k*Math.sin(a);
+    ctx.strokeStyle=s.col;ctx.globalAlpha=.12;ctx.lineWidth=1;
+    ctx.beginPath();ctx.moveTo(d.cx,d.cy);ctx.lineTo(x,y);ctx.stroke();
+    ctx.globalAlpha=.35;ctx.lineWidth=1.6;
+    ctx.save();ctx.translate(d.cx,d.cy);ctx.scale(1,r.k);
+    ctx.beginPath();ctx.arc(0,0,r.R,a-(s.sp>0?.7:-.7),a,s.sp<0);ctx.stroke();
+    ctx.restore();
+    ctx.globalAlpha=1;
+    glow(ctx,s.col,x,y,8,.3);
+    ctx.fillStyle=s.col;ctx.beginPath();ctx.arc(x,y,3,0,6.29);ctx.fill();
+  }
+}
+makeAnim(document.getElementById("cvOrbit"),orbitSetup(1),orbitDraw);
+makeAnim(document.getElementById("spCv"),orbitSetup(1),orbitDraw);
+
+/* ============ HERO · 星圖 + 軌道 ============ */
+makeAnim(document.getElementById("heroCv"),(W,H)=>{
+  const mob=W<760;
+  const N=mob?20:Math.min(38,Math.round(W*H/30000));
+  const nodes=[...Array(N)].map((_,i)=>({
+    x:r01(i*7.7)*W,y:r01(i*3.3)*H,
+    ax:8+r01(i*5.1)*10,ay:8+r01(i*9.2)*10,
+    sx:.08+r01(i*2.2)*.12,sy:.08+r01(i*4.4)*.12,
+    p1:r01(i*6.1)*6.28,p2:r01(i*8.3)*6.28
+  }));
+  let orb=null;
+  if(!mob){
+    const Rb=Math.min(W*.26,H*.4);
+    orb=orbitSetup(1)(Rb*2.2,Rb*2.2);
+    orb.ox=W*.76-Rb*1.1;orb.oy=H*.44-Rb*1.1;
+  }
+  return{nodes,orb,mob};
+},(ctx,t,W,H,d)=>{
+  const ps=d.nodes.map(n=>[n.x+Math.sin(t*n.sx+n.p1)*n.ax,n.y+Math.cos(t*n.sy+n.p2)*n.ay]);
+  ctx.lineWidth=1;ctx.strokeStyle=PRI;
+  for(let i=0;i<ps.length;i++)for(let j=i+1;j<ps.length;j++){
+    const dx=ps[i][0]-ps[j][0],dy=ps[i][1]-ps[j][1];
+    const dist=dx*dx+dy*dy;
+    if(dist<12100){
+      ctx.globalAlpha=(1-Math.sqrt(dist)/110)*(d.mob?.06:.085);
+      ctx.beginPath();ctx.moveTo(ps[i][0],ps[i][1]);ctx.lineTo(ps[j][0],ps[j][1]);ctx.stroke();
+    }
+  }
+  ctx.fillStyle="#AFC4EE";
+  for(const p of ps){
+    ctx.globalAlpha=.42;
+    ctx.beginPath();ctx.arc(p[0],p[1],1.4,0,6.29);ctx.fill();
+  }
+  ctx.globalAlpha=1;
+  if(d.orb){
+    ctx.save();ctx.translate(d.orb.ox,d.orb.oy);ctx.globalAlpha=.55;
+    orbitDraw(ctx,t*.6,0,0,d.orb);
+    ctx.restore();ctx.globalAlpha=1;
+  }
+},30);
+
+/* ================= UI ================= */
+function initUI(){
+  const nav=document.getElementById("nav");
+  const onScroll=()=>{
+    nav.classList.toggle("scrolled",scrollY>10);
+    document.getElementById("toTop").classList.toggle("show",scrollY>700);
+  };
+  addEventListener("scroll",onScroll,{passive:true});onScroll();
+  document.getElementById("toTop").addEventListener("click",()=>scrollTo({top:0,behavior:REDUCED?"auto":"smooth"}));
+  const burger=document.getElementById("burger");
+  burger.addEventListener("click",()=>{
+    const open=document.body.classList.toggle("menu-open");
+    burger.setAttribute("aria-expanded",open);
+  });
+  document.querySelectorAll(".m-menu a").forEach(a=>a.addEventListener("click",()=>{
+    document.body.classList.remove("menu-open");burger.setAttribute("aria-expanded","false");
+  }));
+  if(!("IntersectionObserver" in window)){document.documentElement.classList.add("no-io")}
+  else{
+    const rev=new IntersectionObserver(es=>{
+      es.forEach(e=>{if(e.isIntersecting){e.target.classList.add("in");rev.unobserve(e.target)}});
+    },{threshold:.08,rootMargin:"0px 0px -4% 0px"});
+    document.querySelectorAll(".reveal,.mat").forEach(el=>rev.observe(el));
+  }
+  const secs=["gap","services","case1","spirit","thesis"];
+  const links=[...document.querySelectorAll(".nav-links a")];
+  const spy=new IntersectionObserver(es=>{
+    es.forEach(e=>{
+      if(!e.isIntersecting)return;
+      let id=e.target.id;
+      if(id==="b1"||id==="maturity")id="services";
+      if(id==="b2"||id==="case2")id="case1";
+      links.forEach(l=>l.classList.toggle("on",l.getAttribute("href")==="#"+id));
+    });
+  },{rootMargin:"-38% 0px -55% 0px"});
+  ["gap","services","b1","case1","maturity","b2","case2","spirit","thesis"].forEach(id=>{
+    const el=document.getElementById(id);if(el)spy.observe(el);
+  });
+}
+
+document.addEventListener("DOMContentLoaded",()=>{
+  initLang();
+  initUI();
+  startAnims();
+});
+</script>
+</body>
+</html>
