@@ -28,4 +28,4 @@ GitHub Pages：Settings → Pages → Branch 選 `main`（root）→ Save，
 
 ## 內容架構
 
-Hero → 問題所在（The Gap）→ 三大核心業務 → 企業 AI 流程再造 → 案例：工程製造業 → 成熟度五階段 → 產業 AI OS → 案例：人力仲介業 → 語氣靈（五層架構／Data ≠ Personality）→ 核心理念 → 聯絡我們
+Hero → 問題所在（The Gap）→ 三大核心業務 → 企業 AI 流程再造 → 案例：工程製造業 → 成熟度五階段 → 產業 AI OS → 案例：移工人力服務業 → 語氣靈（五層架構／Data ≠ Personality）→ 核心理念 → 聯絡我們
