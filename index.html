@@ -55,7 +55,7 @@ section{scroll-margin-top:84px;position:relative}
 .menu-open .burger span:nth-child(1){top:20px;transform:rotate(45deg)}
 .menu-open .burger span:nth-child(2){opacity:0}
 .menu-open .burger span:nth-child(3){top:20px;transform:rotate(-45deg)}
-.m-menu{display:none;position:fixed;inset:68px 0 0 0;z-index:99;background:rgba(10,11,13,.97);backdrop-filter:blur(16px);padding:28px 24px;flex-direction:column;gap:4px}
+.m-menu{display:none;position:fixed;inset:68px 0 0 0;z-index:99;background:#0A0B0D;padding:28px 24px;flex-direction:column;gap:4px;overflow-y:auto}
 .menu-open .m-menu{display:flex}
 .m-menu a{padding:15px 8px;font-size:19px;font-weight:500;color:var(--text);border-bottom:1px solid var(--line);display:flex;justify-content:space-between;align-items:center}
 .m-menu a small{color:var(--muted);font-size:12px;letter-spacing:.18em}
@@ -318,15 +318,17 @@ footer{border-top:1px solid var(--line);padding:44px 0;color:var(--muted);font-s
     <a class="nav-cta" href="#contact" data-i18n="nav6">聯絡我們</a>
     <button class="burger" id="burger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
   </div>
-  <div class="m-menu" id="mmenu">
-    <a href="#gap"><span data-i18n="nav1">問題所在</span><small>THE GAP</small></a>
-    <a href="#services"><span data-i18n="nav2">三大業務</span><small>BUSINESS</small></a>
-    <a href="#case1"><span data-i18n="nav3">產業案例</span><small>CASES</small></a>
-    <a href="#spirit"><span>語氣靈</span><small>PERSONALITY</small></a>
-    <a href="#thesis"><span data-i18n="nav5">核心理念</span><small>THESIS</small></a>
-    <a href="#contact" class="m-cta"><span data-i18n="nav6">聯絡我們</span></a>
-  </div>
 </header>
+
+<!-- 手機選單放在 header 外層：header 的 backdrop-filter 會讓內部 fixed 元素失效 -->
+<div class="m-menu" id="mmenu">
+  <a href="#gap"><span data-i18n="nav1">問題所在</span><small>THE GAP</small></a>
+  <a href="#services"><span data-i18n="nav2">三大業務</span><small>BUSINESS</small></a>
+  <a href="#case1"><span data-i18n="nav3">產業案例</span><small>CASES</small></a>
+  <a href="#spirit"><span>語氣靈</span><small>PERSONALITY</small></a>
+  <a href="#thesis"><span data-i18n="nav5">核心理念</span><small>THESIS</small></a>
+  <a href="#contact" class="m-cta"><span data-i18n="nav6">聯絡我們</span></a>
+</div>
 
 <!-- ============ HERO ============ -->
 <section class="hero" id="home">
